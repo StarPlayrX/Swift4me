@@ -1,0 +1,42 @@
+<textarea id="assemblyline" class="clipboard-text" tabindex="-1">
+/**
+ Assembly Line - building cars using out Car class
+ Code Snippet by Todd Bruss © 2020 Swift4.me
+ */
+class Car {
+    
+    var wheels: Int!
+    var doors: Int!
+    var color: Striwng!
+    
+    //MARK: here we init our class and assign variables for our car(s)
+    init(wheels: Int, doors: Int, color: String) {
+        self.wheels = wheels
+        self.doors  = doors
+        self.color  = color
+    }
+    
+    //MARK: This will release all variables from our class
+    deinit {
+        print("deinit")
+        wheels = nil
+        doors  = nil
+        color  = nil
+    }
+}
+ 
+//MARK: Build as many cars as we like
+var mustang   = Car(wheels: 4, doors: 2, color: "Green") 
+//MARK: This can only init'd once, but properties can still be modified
+let campagna  = Car(wheels: 3, doors: 3, color: "Black")
+
+//deinit will auto run because
+//Swift sees we init'd a new instance of Car
+mustang = Car(wheels: 4, doors: 4, color: "Blue") 
+//deinit will not run here
+//we are only modifying an existing car
+mustang.doors = 2
+print(mustang.color) //Optional("Blue") 
+campagna.doors = 0
+print(campagna.doors) //Optional(0)
+</textarea>

@@ -1,0 +1,31 @@
+<textarea id="willynilly" class="clipboard-text"  tabindex="-1">
+/**
+ Willy Nilly: Read in three Optionals, Return an Optional
+ Code Snippet by Todd Bruss, Swift4.me © 2020
+ */
+
+func pullString (_ Puppet: String?, Master: String?, Relationship: String? ) -> String? {
+    guard
+        let Pinocchio = Puppet,
+        let Geppetto = Master,
+        let Dad = Relationship
+        else
+    { return nil }
+    
+    //MARK: Since we have guard, this really is not needed. isEmpty is sure handy though!
+    if Pinocchio.isEmpty {
+        return .none
+    } else {
+        let str = "I am \(Pinocchio), \(Geppetto) is my \(Dad)."
+        return str
+    }
+}
+
+let willReturn = pullString("Peter Pan", Master: "Captain Hook", Relationship: "Rival") 
+print(willReturn as Any)
+//Optional("I am Peter Pan, Captain Hook is my Rival.") 
+let nillReturn = pullString(nil, Master: "Captain Hook", Relationship: "Rival")
+
+print(nillReturn as Any)
+//nil
+</textarea>

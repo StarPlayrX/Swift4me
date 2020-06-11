@@ -1,0 +1,33 @@
+<textarea id="hellojson" class="clipboard-text"  tabindex="-1">
+/**
+ Hello JSON, An experiment with writing and reading JSON Strings using Dictionary and NSDictionary
+ Code Snippet by Todd Bruss, Swift4.me © 2020
+ */
+
+import Foundation
+
+let helloJSON = ["Hello":"JSON"] //Input from Swift needs to be Array or Dictionary
+
+let serial = JSONSerialization.self //Saves some typing
+
+//MARK: Check if our JSON Input is valid?
+let isValidJSON = serial.isValidJSONObject(helloJSON) //true
+
+//Normally we'd capture any errors here, but in this example we are not
+let data = try serial.data(withJSONObject: helloJSON, options: serial.WritingOptions.prettyPrinted)
+let asDictionary = try serial.jsonObject(with: data, options: serial.ReadingOptions.fragmentsAllowed) as! [String:String]
+let asNSDictionary = try serial.jsonObject(with: data, options: serial.ReadingOptions.fragmentsAllowed) as! NSDictionary //Default
+
+//MARK: Spiffy Print Function
+func log(_ obj:Any) {
+    print(obj)
+    print("Type:\(type(of: obj))", terminator: "\n\n")
+}
+
+log(asDictionary["Hello"] as String? as Any)
+
+/*
+ Optional("JSON")
+ Type:Optional<String>
+ */
+</textarea>

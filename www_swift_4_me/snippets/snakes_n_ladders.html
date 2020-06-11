@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c; min-height: 11.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fd8f3f; background-color: #0a0b0c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc6a5d; background-color: #0a0b0c}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #6c7986; background-color: #0a0b0c}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc5fa3; background-color: #0a0b0c}
+    span.s1 {color: #fc5fa3}
+    span.s2 {color: #41a1c0}
+    span.s3 {color: #d0a8ff}
+    span.s4 {color: rgba(255, 255, 255, 0.85)}
+    span.s5 {color: #6c7986}
+    span.s6 {color: #a167e6}
+    span.s7 {color: #d0bf69}
+    span.s8 {color: #fc6a5d}
+    span.s9 {font: 12.0px Menlo; color: rgba(255, 255, 255, 0.85)}
+    span.s10 {font: 12.0px Menlo; color: rgba(108, 121, 134, 0.45)}
+    span.s11 {color: #5dd8ff}
+    span.s12 {color: #9ef1dd}
+    span.s13 {color: #67b7a4}
+  </style>
+</head>
+<body>
+<p class="p3"><br></p>
+<p class="p1">/*</p>
+<p class="p1"><span class="Apple-converted-space"> </span>Snakes and Ladders</p>
+<p class="p1"><span class="Apple-converted-space"> </span>Full Game Sim, War Games style</p>
+<p class="p1"><span class="Apple-converted-space"> </span>created by Todd Bruss © 2020 Swift4.me Swift4me.com</p>
+<p class="p1"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p2"><span class="s1"><b>import</b></span> Foundation</p>
+<p class="p3"><br></p>
+<p class="p1">//Here we<span class="Apple-converted-space"> </span>need to have a Random function that it supports</p>
+<p class="p2"><span class="s1"><b>func</b></span> <span class="s2">rollDie</span>(<span class="s1"><b>_</b></span> min: <span class="s3">Int</span>, <span class="s1"><b>_</b></span> max: <span class="s3">Int</span>) -&gt; <span class="s3">Int</span> {</p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span>#if<span class="s4"> </span>os<span class="s4">(</span>Linux<span class="s4">)</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>return</b></span> Int(random() % max) + min <span class="s5">//Linux only</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span>#else</p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1"><b>return</b></span><span class="s4"> </span><span class="s3">Int</span><span class="s4">.</span><span class="s6">random</span><span class="s4">(in: min</span><span class="s6">...</span><span class="s4">max) </span>//Swift 5 for macOS and iOS</p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span>#endif</p>
+<p class="p2">}</p>
+<p class="p3"><br></p>
+<p class="p1">// Snakes and Ladders Game Function, default die is 6</p>
+<p class="p2"><span class="s1"><b>func</b></span> <span class="s2">snakesAndLadders</span>(die_max: <span class="s3">Int</span> = <span class="s7">6</span>, player1_name: <span class="s3">String</span> = <span class="s8">"Ricky"</span>, player2_name: <span class="s3">String</span> = <span class="s8">"Bobby"</span>) {</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1"><b>let</b></span><span class="s4"> divider = </span>"-----------------------------------------"</p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>// protect against a single sided die</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>guard</b></span> die_max <span class="s6">&gt;</span> <span class="s7">1</span> <span class="s1"><b>else</b></span> {</p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">print</span><span class="s4">(</span>"Sorry, a single sided die cannot used in this game.\r\nIt causes an infinite loop to occur and is not allowed."<span class="s4">)</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>return</b></span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>// protect against a die greater than 64</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>guard</b></span> die_max <span class="s6">&lt;=</span> <span class="s7">64</span> <span class="s1"><b>else</b></span> {</p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">print</span><span class="s4">(</span>"Sorry, a die larger than 64 is not allowed."<span class="s4">)</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>return</b></span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>// tell the user how big the die is</p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">print</span><span class="s4">(</span>"Using a <span class="s4">\(die_max)</span> sided die.\r\n"<span class="s4">)</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> LaddersDict = [<span class="s3">Int</span>:<span class="s3">Int</span>]()</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> SnakesDict<span class="Apple-converted-space">  </span>= [<span class="s3">Int</span>:<span class="s3">Int</span>]()</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>The Game Board has 6 Ladders</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Its key is the landed on position</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Its value is the upgraded to position</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">80</span>] = <span class="s7">99</span> <span class="Apple-converted-space">  </span><span class="s5">//1</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">2</span>]<span class="Apple-converted-space">  </span>= <span class="s7">38</span> <span class="Apple-converted-space">  </span><span class="s5">//2</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">4</span>]<span class="Apple-converted-space">  </span>= <span class="s7">14</span> <span class="Apple-converted-space">  </span><span class="s5">//3</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">9</span>]<span class="Apple-converted-space">  </span>= <span class="s7">31</span> <span class="Apple-converted-space">  </span><span class="s5">//4</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">33</span>] = <span class="s7">85</span> <span class="Apple-converted-space">  </span><span class="s5">//5</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>LaddersDict[<span class="s7">52</span>] = <span class="s7">88</span> <span class="Apple-converted-space">  </span><span class="s5">//6</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>The Game Board has 5 Snakes</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Its key is the landed on position</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Its value is the downgraded to position</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>SnakesDict[<span class="s7">62</span>] = <span class="s7">57</span><span class="Apple-converted-space">  </span><span class="s5">//1</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>SnakesDict[<span class="s7">98</span>] = <span class="s7">8</span> <span class="Apple-converted-space">  </span><span class="s5">//2</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>SnakesDict[<span class="s7">56</span>] = <span class="s7">15</span><span class="Apple-converted-space">  </span><span class="s5">//3</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>SnakesDict[<span class="s7">92</span>] = <span class="s7">53</span><span class="Apple-converted-space">  </span><span class="s5">//4</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>SnakesDict[<span class="s7">51</span>] = <span class="s7">11</span><span class="Apple-converted-space">  </span><span class="s5">//5</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>For this version our game has two players</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>The goal is to simulate and entire game until a winner is declared</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> start_position<span class="Apple-converted-space">  </span>= <span class="s7">1</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> finish_position = <span class="s7">100</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>This lets up reuse our stats for other areas in our app and we only need to define it once.</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>typealias</b></span> <span class="s11">stats</span> = (name:<span class="s3">String</span>, position:<span class="s3">Int</span>,snakes:<span class="s3">Int</span>,ladders:<span class="s3">Int</span>)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> PlayerDict = [<span class="s3">Int</span>:(<span class="s12">stats</span>)]()</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>PlayerDict[<span class="s7">1</span>] = (name:player1_name, position: start_position, snakes:<span class="s7">0</span>, ladders:<span class="s7">0</span>)</p>
+<p class="p2"><span class="Apple-converted-space">    </span>PlayerDict[<span class="s7">2</span>] = (name:player2_name, position: start_position, snakes:<span class="s7">0</span>, ladders:<span class="s7">0</span>)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Determine's which player should go first</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Uses a coin toss randomize function.</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>It works on Linux and macOS / iOS</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> coin_toss = <span class="s13">rollDie</span>(<span class="s7">1</span>,<span class="s7">2</span>)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Since our loop starts out with the inverse, We invert this input (negative x negative = positive)</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Player1 turn properly determines if player 1 or 2 goes first</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> player1_turn = coin_toss <span class="s6">==</span> <span class="s7">1</span> ? <span class="s1"><b>false</b></span> : <span class="s1"><b>true</b></span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>//count how many turns it took to reach a victor!</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> turn_counter = <span class="s7">0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>//keeps taps on which player is playing</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> current_player = <span class="s7">1</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>// game constants</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> increment = <span class="s7">1</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> die_min = <span class="s7">1</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>In this loop, I cut it down it to as few operations as possible (for scalability over time)</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Also keep the code as readable as possible that is in the loop</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s10">///</span><span class="s9"> </span>Game Loop: Play until we have an absolute winner! First 1 to square 100 wins. Winner must have a perfect roll.</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>while</b></span> PlayerDict[<span class="s7">1</span>]?.position ?? <span class="s7">1</span> <span class="s6">&lt;</span> finish_position <span class="s6">&amp;&amp;</span> PlayerDict[<span class="s7">2</span>]?.position ?? <span class="s7">1</span> <span class="s6">&lt;</span> finish_position {</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s6">print</span>(divider)</p>
+<p class="p2"><span class="Apple-converted-space">        </span>turn_counter <span class="s6">+=</span> increment</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span>//alternates between player 1 and player 2</p>
+<p class="p2"><span class="Apple-converted-space">        </span>player1_turn = <span class="s6">!</span>player1_turn</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>current_player = player1_turn ? <span class="s7">1</span> : <span class="s7">2</span></p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span>//Update player position with new roll</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>let</b></span> roll = <span class="s13">rollDie</span>(die_min, die_max)</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> cp = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s6">print</span>(<span class="s8">"</span>\(cp.name)<span class="s8"> rolls </span>\(roll)<span class="s8">,"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>PlayerDict[current_player]?.position <span class="s6">+=</span> roll</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>var</b></span> square99 = <span class="s1"><b>false</b></span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> position = PlayerDict[current_player]?.position {</p>
+<p class="p3"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">            </span></span>//if &gt;100 move the player back, we are expecting a perfect roll</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s1"><b>if</b></span> position <span class="s6">&gt;</span> finish_position {</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">                </span></span><span class="s10">///</span><span class="s9"> </span>Reverts the player's position</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">                </span></span><span class="s10">///</span><span class="s9"> </span>Our game rule is the player must have an exact roll</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">                </span></span><span class="s10">///</span><span class="s9"> </span>This makes the game more interesting with more chances to</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">                </span></span><span class="s10">///</span><span class="s9"> </span>1. player can land on a snake near the end</p>
+<p class="p6"><span class="s9"><span class="Apple-converted-space">                </span></span><span class="s10">///</span><span class="s9"> </span>2. the opposing player has a chance to catch up</p>
+<p class="p2"><span class="Apple-converted-space">                </span>PlayerDict[current_player]?.position <span class="s6">-=</span> roll</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"</span>\(currentPlayer.name)<span class="s8">'s roll lands past 100,\r\nmoves back to previous spot: </span>\(currentPlayer.position)<span class="s8">."</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                    </span>square99 = <span class="s1"><b>true</b></span></p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span>}</p>
+<p class="p3"><span class="Apple-converted-space">            </span></p>
+<p class="p3"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">            </span></span>//the player landed on a ladder base (yay!)</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> ladder_destination = LaddersDict[position] {</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player]{</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"moves to square </span>\(currentPlayer.position)<span class="s8">,"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s6">print</span><span class="s4">(</span>"lands on a ladder,"<span class="s4">)</span></p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span>PlayerDict[current_player]?.ladders <span class="s6">+=</span> increment</p>
+<p class="p2"><span class="Apple-converted-space">                </span>PlayerDict[current_player]?.position = ladder_destination</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"climbs to </span>\(currentPlayer.position)<span class="s8">."</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">                </span></span>//the player landed on a Snake head (ouch! I got bit)</p>
+<p class="p2"><span class="Apple-converted-space">            </span>} <span class="s1"><b>else</b></span> <span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> snake_destination = SnakesDict[position] {</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"moves to square </span>\(currentPlayer.position)<span class="s8">,"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s6">print</span><span class="s4">(</span>"gets bit by a snake,"<span class="s4">)</span></p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span>PlayerDict[current_player]?.snakes <span class="s6">+=</span> increment</p>
+<p class="p2"><span class="Apple-converted-space">                </span>PlayerDict[current_player]?.position = snake_destination</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"slides down to </span>\(currentPlayer.position)<span class="s8">."</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span>} <span class="s1"><b>else</b></span> <span class="s1"><b>if</b></span> <span class="s6">!</span>square99 {</p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> currentPlayer = PlayerDict[current_player] {</p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s6">print</span>(<span class="s8">"moves to square </span>\(currentPlayer.position)<span class="s8">."</span>)</p>
+<p class="p2"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> playerCount = PlayerDict.<span class="s6">count</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>let</b></span> playerLoop = <span class="s3">Array</span>(<span class="s7">1</span><span class="s6">...</span>playerCount)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> standings = [<span class="s3">Int</span>]()</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>for</b></span> p <span class="s1"><b>in</b></span> playerLoop {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> player = PlayerDict[p] {</p>
+<p class="p2"><span class="Apple-converted-space">            </span>standings.<span class="s6">append</span>(player.position)</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> winningPlayer = <span class="s7">0</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>var</b></span> winningScore<span class="Apple-converted-space">  </span>= <span class="s7">0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>//determine winner</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>for</b></span> i <span class="s1"><b>in</b></span> <span class="s7">0</span><span class="s6">..&lt;</span>playerCount {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>if</b></span> standings[i] <span class="s6">&gt;</span> winningScore {</p>
+<p class="p2"><span class="Apple-converted-space">            </span>winningScore = standings[i]</p>
+<p class="p2"><span class="Apple-converted-space">            </span>winningPlayer = i <span class="s6">+</span> increment</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>//And the winner is!</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s6">print</span>(divider)</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> wp = PlayerDict[winningPlayer] { <span class="s5">//, let lp = PlayerDict[losingPlayer] {</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s6">print</span>(<span class="s8">"After </span>\(turn_counter)<span class="s8"> turns: </span>\(wp.name)<span class="s8"> wins!"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s6">print</span>(divider)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span>//prep for multi player</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>for</b></span> p <span class="s1"><b>in</b></span> playerLoop {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> player = PlayerDict[p] {</p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">            </span></span>//additional stats</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s6">print</span>(<span class="s8">"</span>\(player.name)<span class="s8"> total ladders : </span>\(player.ladders)<span class="s8">"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s6">print</span>(<span class="s8">"</span>\(player.name)<span class="s8"> total snakes<span class="Apple-converted-space">  </span>: </span>\(player.snakes)<span class="s8">"</span>)</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s6">print</span>(divider)</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1"><b>if</b></span> <span class="s1"><b>let</b></span> ct = PlayerDict[coin_toss] {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s6">print</span>(<span class="s8">"</span>\(ct.name)<span class="s8"> went first."</span>)</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s6">print</span>(divider)</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><b>return</b></p>
+<p class="p2">}</p>
+<p class="p3"><br></p>
+<p class="p1">//Run the Program</p>
+<p class="p1">//pick which sided die (2-64)</p>
+<p class="p1">//update names acoordingly</p>
+<p class="p2"><span class="s13">snakesAndLadders</span>(die_max: <span class="s7">6</span>, player1_name: <span class="s8">"Bob"</span>, player2_name: <span class="s8">"Todd"</span>)</p>
+<p class="p3"><br></p>
+<p class="p1">//Trivia: Bob Todd was my football nickname in High School</p>
+<p class="p1">//I also went onto play semi pro football 22 years later and was voted team MVP</p>
+<p class="p3"><br></p>
+</body>
+</html>

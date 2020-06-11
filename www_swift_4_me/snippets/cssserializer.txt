@@ -1,0 +1,65 @@
+<textarea id="cssserializer" class="clipboard-text"  tabindex="-1">
+/*
+ CSS Serializer for Cocoa Writer Generated Files
+ 
+ Copy and Paste code from Xcode into TextEdit or Pages
+ Save it as a Web Page .html document
+ 
+ place the document in your home folder
+ rename it to swift.html
+ then run this swift code
+ 
+ This will make each CSS Class unique to the file
+ allowing the resulting HTML to be included
+ with other snippets on the same page
+ 
+ Snippet by Todd Bruss © 2020 Swift4.me Swift4me.com
+ */
+ 
+import Foundation
+ 
+let iterations = 20 //can be made larger if needed (styles past 20 mark)
+let home = "~"
+let inputFile = "/swift.html"
+let outputFile = "/swift-out.html"
+let paragraph = "p.p"
+let span = "span.s"
+let s = "s"
+let p = "p"
+let epoche = Int(Date().timeIntervalSince1970)
+var search = ""
+ 
+//MARK: Reads in inputFile in our Home Directory
+do {
+    let textFile = NSString(string:  "\(home)\(inputFile)").expandingTildeInPath
+    let path = URL(fileURLWithPath: textFile)
+    let contentsOfFile = try Data(contentsOf: path) // Convert the data back into a string
+    
+    if let fileData = String(data: contentsOfFile, encoding: .utf8) {
+        search = fileData
+    }
+} catch {
+    print(error)
+    print("Unable to read the html file :(")
+}
+ 
+//This adds a serial number to each class that matches our pattern
+for i in 1...iterations {
+    search = search.replacingOccurrences(of: "\(paragraph)\(i) {", with: "\(paragraph)\(i)-\(epoche) {")
+    search = search.replacingOccurrences(of: "\(span)\(i) {", with: "\(span)\(i)-\(epoche) {")
+    search = search.replacingOccurrences(of: "\"\(s)\(i)\"", with: "\"\(s)\(i)-\(epoche)\"")
+    search = search.replacingOccurrences(of: "\"\(p)\(i)\"", with: "\"\(p)\(i)-\(epoche)\"")
+}
+ 
+//MARK: Writes in outputFile in our Home Directory
+do {
+    let writeFile = NSString(string: "\(home)\(outputFile)").expandingTildeInPath
+    let writePath = URL(fileURLWithPath: writeFile)
+    if let data = search.data(using: .utf8) {
+        try data.write(to: writePath)
+    }
+} catch {
+    print(error)
+    print("Write did not go too well :(")
+}
+</textarea>

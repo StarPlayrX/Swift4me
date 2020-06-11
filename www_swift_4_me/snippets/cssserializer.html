@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.5">
+  <style type="text/css">
+    p.p1-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c}
+    p.p2-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c; min-height: 14.0px}
+    p.p3-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c; min-height: 14.0px}
+    p.p4-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c}
+    p.p5-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc6a5d; background-color: #0a0b0c}
+    p.p6-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #41a1c0; background-color: #0a0b0c}
+    p.p7-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #a167e6; background-color: #0a0b0c}
+    p.p8-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #92a1b1; background-color: #0a0b0c}
+    p.p9-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc5fa3; background-color: #0a0b0c}
+    p.p10-1591476320 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #67b7a4; background-color: #0a0b0c}
+    span.s1-1591476320 {color: #fc5fa3}
+    span.s2-1591476320 {color: rgba(255, 255, 255, 0.85)}
+    span.s3-1591476320 {color: #41a1c0}
+    span.s4-1591476320 {color: #d0bf69}
+    span.s5-1591476320 {color: #fc6a5d}
+    span.s6-1591476320 {color: #d0a8ff}
+    span.s7-1591476320 {color: #6c7986}
+    span.s8-1591476320 {color: #67b7a4}
+    span.s9-1591476320 {color: #a167e6}
+  </style>
+</head>
+<body>
+
+<p class="p3-1591476320"><br></p>
+<p class="p1-1591476320">/*</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>CSS Serializer for Cocoa Writer Generated Files</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span></p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>Copy and Paste code from Xcode into TextEdit or Pages</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>Save it as a Web Page .html document</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span></p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>place the document in your home folder</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>rename it to swift.html</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>then run this swift code</p>
+<p class="p2-1591476320"><span class="Apple-converted-space"> </span></p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>This will make each CSS Class unique to the file</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>allowing the resulting HTML to be included</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>with other snippets on the same page</p>
+<p class="p2-1591476320"><span class="Apple-converted-space"> </span></p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>Snippet by Todd Bruss © 2020 Swift4.me Swift4me.com</p>
+<p class="p1-1591476320"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p3-1591476320"><br></p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>import</b></span> Foundation</p>
+<p class="p3-1591476320"><br></p>
+<p class="p1-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span><span class="s3-1591476320">iterations</span><span class="s2-1591476320"> = </span><span class="s4-1591476320">20</span><span class="s2-1591476320"> </span>//can be made larger if needed (styles past 20 mark)</p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>let</b></span> <span class="s3-1591476320">home</span> = <span class="s5-1591476320">"~"</span></p>
+<p class="p5-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span><span class="s3-1591476320">inputFile</span><span class="s2-1591476320"> = </span>"/swift.html"</p>
+<p class="p5-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span><span class="s3-1591476320">outputFile</span><span class="s2-1591476320"> = </span>"/swift-out.html"</p>
+<p class="p6-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span>paragraph<span class="s2-1591476320"> = </span><span class="s5-1591476320">"p.p"</span></p>
+<p class="p5-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span><span class="s3-1591476320">span</span><span class="s2-1591476320"> = </span>"span.s"</p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>let</b></span> <span class="s3-1591476320">s</span> = <span class="s5-1591476320">"s"</span></p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>let</b></span> <span class="s3-1591476320">p</span> = <span class="s5-1591476320">"p"</span></p>
+<p class="p7-1591476320"><span class="s1-1591476320"><b>let</b></span><span class="s2-1591476320"> </span><span class="s3-1591476320">epoche</span><span class="s2-1591476320"> = </span><span class="s6-1591476320">Int</span><span class="s2-1591476320">(</span><span class="s6-1591476320">Date</span><span class="s2-1591476320">().</span>timeIntervalSince1970<span class="s2-1591476320">)</span></p>
+<p class="p6-1591476320"><span class="s1-1591476320"><b>var</b></span><span class="s2-1591476320"> </span>search<span class="s2-1591476320"> = </span><span class="s5-1591476320">""</span></p>
+<p class="p3-1591476320"><br></p>
+<p class="p8-1591476320"><span class="s7-1591476320">//MARK:</span><b> Reads in inputFile in our Home Directory</b></p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>do</b></span> {</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>let</b></span> textFile = <span class="s6-1591476320">NSString</span>(string:<span class="Apple-converted-space">  </span><span class="s5-1591476320">"</span>\(<span class="s8-1591476320">home</span>)\(<span class="s8-1591476320">inputFile</span>)<span class="s5-1591476320">"</span>).<span class="s9-1591476320">expandingTildeInPath</span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>let</b></span> path = <span class="s6-1591476320">URL</span>(fileURLWithPath: textFile)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>let</b></span> contentsOfFile = <span class="s1-1591476320"><b>try</b></span> <span class="s6-1591476320">Data</span>(contentsOf: path) <span class="s7-1591476320">// Convert the data back into a string</span></p>
+<p class="p3-1591476320"><span class="Apple-converted-space">    </span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>if</b></span> <span class="s1-1591476320"><b>let</b></span> fileData = <span class="s6-1591476320">String</span>(data: contentsOfFile, encoding: .<span class="s9-1591476320">utf8</span>) {</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">        </span><span class="s8-1591476320">search</span> = fileData</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span>}</p>
+<p class="p9-1591476320"><span class="s2-1591476320">} </span><b>catch</b><span class="s2-1591476320"> {</span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s9-1591476320">print</span>(error)</p>
+<p class="p5-1591476320"><span class="s2-1591476320"><span class="Apple-converted-space">    </span></span><span class="s9-1591476320">print</span><span class="s2-1591476320">(</span>"Unable to read the html file :("<span class="s2-1591476320">)</span></p>
+<p class="p4-1591476320">}</p>
+<p class="p3-1591476320"><br></p>
+<p class="p1-1591476320">//This adds a serial number to each class that matches our pattern</p>
+<p class="p10-1591476320"><span class="s1-1591476320"><b>for</b></span><span class="s2-1591476320"> i </span><span class="s1-1591476320"><b>in</b></span><span class="s2-1591476320"> </span><span class="s4-1591476320">1</span><span class="s9-1591476320">...</span>iterations<span class="s2-1591476320"> {</span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s8-1591476320">search</span> = <span class="s8-1591476320">search</span>.<span class="s9-1591476320">replacingOccurrences</span>(of: <span class="s5-1591476320">"</span>\(<span class="s8-1591476320">paragraph</span>)\(i)<span class="s5-1591476320"> {"</span>, with: <span class="s5-1591476320">"</span>\(<span class="s8-1591476320">paragraph</span>)\(i)<span class="s5-1591476320">-</span>\(<span class="s8-1591476320">epoche</span>)<span class="s5-1591476320"> {"</span>)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s8-1591476320">search</span> = <span class="s8-1591476320">search</span>.<span class="s9-1591476320">replacingOccurrences</span>(of: <span class="s5-1591476320">"</span>\(<span class="s8-1591476320">span</span>)\(i)<span class="s5-1591476320"> {"</span>, with: <span class="s5-1591476320">"</span>\(<span class="s8-1591476320">span</span>)\(i)<span class="s5-1591476320">-</span>\(<span class="s8-1591476320">epoche</span>)<span class="s5-1591476320"> {"</span>)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s8-1591476320">search</span> = <span class="s8-1591476320">search</span>.<span class="s9-1591476320">replacingOccurrences</span>(of: <span class="s5-1591476320">"\"</span>\(<span class="s8-1591476320">s</span>)\(i)<span class="s5-1591476320">\""</span>, with: <span class="s5-1591476320">"\"</span>\(<span class="s8-1591476320">s</span>)\(i)<span class="s5-1591476320">-</span>\(<span class="s8-1591476320">epoche</span>)<span class="s5-1591476320">\""</span>)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s8-1591476320">search</span> = <span class="s8-1591476320">search</span>.<span class="s9-1591476320">replacingOccurrences</span>(of: <span class="s5-1591476320">"\"</span>\(<span class="s8-1591476320">p</span>)\(i)<span class="s5-1591476320">\""</span>, with: <span class="s5-1591476320">"\"</span>\(<span class="s8-1591476320">p</span>)\(i)<span class="s5-1591476320">-</span>\(<span class="s8-1591476320">epoche</span>)<span class="s5-1591476320">\""</span>)</p>
+<p class="p4-1591476320">}</p>
+<p class="p3-1591476320"><br></p>
+<p class="p8-1591476320"><span class="s7-1591476320">//MARK:</span><b> Writes in outputFile in our Home Directory</b></p>
+<p class="p4-1591476320"><span class="s1-1591476320"><b>do</b></span> {</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>let</b></span> writeFile = <span class="s6-1591476320">NSString</span>(string: <span class="s5-1591476320">"</span>\(<span class="s8-1591476320">home</span>)\(<span class="s8-1591476320">outputFile</span>)<span class="s5-1591476320">"</span>).<span class="s9-1591476320">expandingTildeInPath</span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>let</b></span> writePath = <span class="s6-1591476320">URL</span>(fileURLWithPath: writeFile)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s1-1591476320"><b>if</b></span> <span class="s1-1591476320"><b>let</b></span> data = <span class="s8-1591476320">search</span>.<span class="s9-1591476320">data</span>(using: .<span class="s9-1591476320">utf8</span>) {</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">        </span><span class="s1-1591476320"><b>try</b></span> data.<span class="s9-1591476320">write</span>(to: writePath)</p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span>}</p>
+<p class="p9-1591476320"><span class="s2-1591476320">} </span><b>catch</b><span class="s2-1591476320"> {</span></p>
+<p class="p4-1591476320"><span class="Apple-converted-space">    </span><span class="s9-1591476320">print</span>(error)</p>
+<p class="p5-1591476320"><span class="s2-1591476320"><span class="Apple-converted-space">    </span></span><span class="s9-1591476320">print</span><span class="s2-1591476320">(</span>"Write did not go too well :("<span class="s2-1591476320">)</span></p>
+<p class="p4-1591476320">}</p>
+<p class="p3-1591476320"><br></p>
+</body>
+</html>
