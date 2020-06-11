@@ -123,3 +123,9 @@ reset(_S.menu)
 startup(_S.menu)
 
 init()
+
+/* detect fullscreen on iPhone, not in use
+if ('standalone' in navigator && navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+    let test = _O.doc.getElementById('navi')
+    test.classList.add("navi")
+}*/

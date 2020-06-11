@@ -183,9 +183,10 @@ body {
     navigation {
         top:0;
     }
-
-
+    
+    
 }
+
 
 /* iOS Only Styles */
 @supports (-webkit-touch-callout: none ){
@@ -201,7 +202,7 @@ body {
         navigation {
             bottom:0;
         }
-    
+        
         .topper {
             margin-top:0;
             margin-bottom:0;
@@ -224,6 +225,26 @@ body {
     @media screen and (orientation:portrait) {
         navigation {
             top:0;
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    /* supports Fullscreen Homescreen mode on iOS */
+    @media screen and (device-width: 100vw) and (device-height: 100vh) and (orientation:portrait) {
+        navigation, .topper {
+            padding-top:35px;
+        }
+        
+        :target:before {
+            content:"";
+            display: block;
+            height: 83px;
+            margin-top: -83px;
         }
     }
 }
