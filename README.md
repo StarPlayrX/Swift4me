@@ -31,7 +31,7 @@ InsertX can also draw minimalistic buttons via this simple markup. Button-X's bu
 
 InsertX.js is open source and is currently only available through this repo.
 
-It is designed to be a standable framework with it's own CSS, HTML and JS. The JS is prorgammed in ES6.
+It is designed to be a standalone framework with it's own CSS, HTML and JS. The JS is prorgammed in ES6.
 
 Initially InsertX was going to use Bootstrap but I was not impressed that BS4.5 still has dependencies to jQuery. I also feel that BS is grown way beyond a simple CSS and HMTL framework. So, InsertX decided to go solo offering it own flavor of UI minimalism.
 
