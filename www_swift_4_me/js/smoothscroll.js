@@ -21,7 +21,7 @@ const smoothscroll = _ => {
         return new RegExp(userAgentPatterns.join('|')).test(userAgent)
     }
     
-    const ROUNDING_TOLERANCE = isMicrosoftBrowser(w.navigator.userAgent) ? 1 : 0
+    const ROUNDING_TOLERANCE = 1
     
     function scrollElement(x,y) { 0, this.scrollTop = y }
     
@@ -67,7 +67,6 @@ const smoothscroll = _ => {
     const step = (context) => {
         const time = now()
         let value
-        let currentX
         let currentY
         
         var distance = context.y - context.startY
@@ -87,21 +86,23 @@ const smoothscroll = _ => {
             multiplier = 5
         }
                 
-        let elapsed = (time - context.startTime) / (450 * multiplier)
+        let elapsed = (time - context.startTime) / (360 * multiplier)
         // avoid elapsed times higher than one
         elapsed = elapsed > 1 ? 1 : elapsed
         
         // apply easing to elapsed time
         value = ease(elapsed)
         
-        currentX = 0
         currentY = context.startY + (context.y - context.startY) * value
         
-        context.method.call(context.scrollable, currentX, currentY)
+        context.method.call(context.scrollable, 0, currentY)
         
-        // scroll more if we have not reached our destination
-        if (currentX !== context.x || currentY !== context.y)
+        //fixed issue with iOS and iPad OS
+        if ( currentY !== context.y && currentY !== undefined && context.y !== undefined && currentY !== NaN && context.y !== NaN ) {
             w.requestAnimationFrame(step.bind(w, context))
+        } else {
+            return
+        }
 
     }
     
