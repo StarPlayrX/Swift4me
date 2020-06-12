@@ -1,33 +1,34 @@
 # Swift4me_InsertXjs
-Swift4.me Fast Fun Free Swift5+ Snippets built on the InsertX.JS framework
+Swift4.me minimnal UI style website
+built on the InsertX.JS framework
 
-InsertX.JS Alpha v0.0.2 is included in this repo
-It is a minimalistic dynamic framework for building simple websites
+InsertX.JS Alpha v0.0.5 is included in this repo
+It is a minimalistic dynamic framework for building simple websites.
 
-It uses fetch to build dynamic web pages from static html content.
-
-To use fetch you must run the page from an http web server.
-
-There many out there. I use Perfect3 from PerfectlySoft, but you use any HTTP web server like Apache, NGINX, Node, Perfect, Vapor, Kitura, etc.
+InsertX uses fetch to build dynamic web pages from static html content. To use fetch you must run the page from an http web server. I use Perfect3 from PerfectlySoft, but you use any HTTP web server like Apache, NGINX, Node, Perfect, Vapor, Kitura, etc.
 
 This is how insertX places HTML content:
 
+```html
 <!-- insert html file -->
 <insert-X
-	data-fold="snippets" 		<!-- folder with relative path ./ -->
-	data-file="assemblyline"     <!-- name of the file -->
-	data-type="html">	       <!-- type of file (txt and html is supported) -->
+	
+	data-fold="snippets" 	  <!-- folder with relative path ./ -->	
+	data-file="assemblyline"  <!-- name of the file -->
+	data-type="html">	  <!-- type of file (txt and html is supported) -->
 </insert-X>
+```
 
 InsertX can also draw minimalistic buttons via this simple markup. Button-X's buttons are fully compatible with desktop and touch devices. And both will have the same look at feel. They even have the same behaviors on a touch device as they do on the desktop!
 
+```html
 <button-X
-	data-mini="default" 		 <!-- style of the button (currently only option is default) -->
-	data-clik="text2clip"             <!-- the button action -->
-	data-args="assemblyline"    <!-- arguments, this currently a String,
-                                                            JS variable support is under way -->
-	data-name="Clipboard">     <!-- name or title of the button -->
+	data-mini="default"       <!-- style of the button (currently only option is default) -->
+	data-clik="text2clip"     <!-- the button action -->
+	data-args="assemblyline"  <!-- arguments, this currently a String, JS variable will be added -->
+	data-name="Clipboard">    <!-- name or title of the button -->
 </button-X>
+```
 
 InsertX.js is open source and is currently only available through this repo.
 
@@ -42,5 +43,3 @@ As Swift4.me grows, which is powered by InsertX, so will InsertX.js. Thank you!
 Sincerely,
 
 Todd Bruss
-starplayrx.com
-swift4.me
