@@ -11,24 +11,56 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1"/>
         <meta name="description" content="Swift4.me | Swift4me.com (c) 2020"/>
         <meta name="author" content="Todd Bruss"/>
-        <meta name="apple-mobile-web-app-capable" content="yes">
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-                
-                <title>Swift4.me</title>
-                
-                <!-- CSS -->
-                <link href="css/insertX.css" rel="stylesheet"/>
-                
-                <!-- Fonts -->
-                <link href="css/fonts.css" rel="stylesheet"/>
-                
-                </head>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        
+        <!-- Home screen icons for iOS -->
+        <link rel="apple-touch-icon" sizes="2048x2048" href="./images/icons/4melogo-2048.png" />
+        <link rel="apple-touch-icon" sizes="1024x1024" href="./images/icons/4melogo-1024.png" />
+        <link rel="apple-touch-icon" sizes="240x240"   href="./images/icons/4melogo-240.png" />
+        <link rel="apple-touch-icon" sizes="180x180"   href="./images/icons/4melogo-180.png" />
+        <link rel="apple-touch-icon" sizes="167x167"   href="./images/icons/4melogo-167.png" />
+        <link rel="apple-touch-icon" sizes="152x152"   href="./images/icons/4melogo-152.png" />
+        <link rel="apple-touch-icon" sizes="120x120"   href="./images/icons/4melogo-120.png" />
+        <link rel="apple-touch-icon" sizes="87x87"     href="./images/icons/4melogo-84.png" />
+        <link rel="apple-touch-icon" sizes="80x80"     href="./images/icons/4melogo-80.png" />
+        <link rel="apple-touch-icon" sizes="76x76"     href="./images/icons/4melogo-76.png" />
+        <link rel="apple-touch-icon" sizes="60x60"     href="./images/icons/4melogo-60.png" />
+        <link rel="apple-touch-icon" sizes="58x58"     href="./images/icons/4melogo-58.png" />
+        <link rel="apple-touch-icon" sizes="40x40"     href="./images/icons/4melogo-40.png" />
+        <link rel="apple-touch-icon" sizes="29x29"     href="./images/icons/4melogo-29.png" />
+        <link rel="apple-touch-icon" sizes="20x20"     href="./images/icons/4melogo-20.png" />
+        
+        <!-- Splash screen icons -->
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="./images/splash/swift4me-splash-1242x2688.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="./images/splash/swift4me-splash-1242x2208.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="./images/splash/swift4me-splash-1125x2436.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="./images/splash/swift4me-splash-828x1792.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="./images/splash/swift4me-splash-750x1334.png"/>
+        
+        <!-- iPad to implement
+        <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-2048x2732.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1668x2388.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1668x2224.png"/>
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1536x2048.png"/>-->
+      
+        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+            
+            <title>Swift4.me</title>
+            
+            <!-- CSS -->
+            <link href="css/insertX.css" rel="stylesheet"/>
+            
+            <!-- Fonts -->
+            <link href="css/fonts.css" rel="stylesheet"/>
+            
+            </head>
     
     <body>
         
         <header id="top-nav-bar">
             <website>Swift4.me</website>
-            <span class="bff">Super Fun</span>
+            <span class="bff"></span>
             
             <div class="minimal-select">
                 <select class="minimal-default" id="selectmenu" onchange="select(this)">
@@ -201,7 +233,7 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                     </insert-X>
                 </article>
             </div>
-
+            
             <!-- Snakes -->
             <div id="snakes_n_ladders">
                 <section>
@@ -235,9 +267,9 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         </main>
         
         <footer>
-            <website>InsertX.js</website>
-            <span class="bff">Super Simple</span>
-
+            <website>Foundation</website>
+            <span class="bff"></span>
+            
             <div class="minimal-select">
                 <select class="minimal-default" id="selectmenu" onchange="select(this)">
                     <option value="">Main Menu</option>

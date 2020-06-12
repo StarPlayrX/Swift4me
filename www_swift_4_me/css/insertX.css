@@ -77,14 +77,24 @@ select {
     user-select: none;
 }
 
+select {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .minimal-default:hover, .minimal-default-up:hover, select:hover {
     background: var(--minimal-default-hover-color);
 }
 
-.minimal-default-down,
+.minimal-default-down {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    background: var(--minimal-default-focus-color);
+    box-shadow: 0 0 0 2px var(--minimal-default-light-color);
+    outline:none;
+}
+
 .minimal-default-down:focus,
 .minimal-default:focus {
-    background-color: var(--minimal-default-focus-color);
+    background: var(--minimal-default-focus-color);
     box-shadow: 0 0 0 2px var(--minimal-default-light-color);
     outline:none;
 }
@@ -114,14 +124,14 @@ section {
     padding:15px;
     display:block;
     height:2.5rem;
-    background-color: var(--section-bg-color);
+    background: var(--section-bg-color);
 }
 
 article {
     border-radius: 0px 0px 12px 12px;
     margin:-1px 15px 0 15px;
     padding:15px;
-    background-color:var(--article-bg-color);
+    background:var(--article-bg-color);
 }
 
 select::-ms-expand {
@@ -155,7 +165,7 @@ main {
 
 html {
     -webkit-locale: "en";
-    background-color:var(--html-bg-color);
+    background:var(--html-bg-color);
     
 }
 
@@ -205,25 +215,37 @@ html, body, main {
         }
     }
     
-    @media screen and (orientation:portrait) {
+    @media screen and (min-height: 799px) and (orientation:portrait) {
         footer {
-            display: none;
+            padding-bottom:15px;
+        }
+        
+        html, body, main {
+            overflow-y:scroll;
+            height:101vh;
+        }
+    }
+    
+    @media screen and  (max-height: 800px) and (orientation:portrait) {
+        footer {
+            padding-bottom:0;
         }
     }
     
     /* supports Fullscreen Homescreen mode on iOS */
     @media screen and (device-width: 100vw) and (device-height: 100vh) and (orientation:portrait) {
-
+        
         header {
             padding-top:35px;
         }
-         
+        
         .topper {
             padding-top:83px;
         }
         
         footer {
             display:block;
+            
             padding-bottom:20px;
         }
     }
