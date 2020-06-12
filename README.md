@@ -25,7 +25,7 @@ InsertX can also draw minimalistic buttons via this simple markup. Button-X's bu
 <button-X
 	data-mini="default"       <!-- style of the button (currently only option is default) -->
 	data-clik="text2clip"     <!-- the button action -->
-	data-args="assemblyline"  <!-- arguments, this currently a String, JS variable will be added -->
+	data-args="assemblyline"  <!-- arguments, this currently a String -->
 	data-name="Clipboard">    <!-- name or title of the button -->
 </button-X>
 ```
@@ -36,9 +36,7 @@ It is designed to be a standalone framework with it's own CSS, HTML and JS. The 
 
 Initially InsertX was going to use Bootstrap but I was not impressed that BS4.5 still has dependencies to jQuery. I also feel that BS is grown way beyond a simple CSS and HMTL framework. So, InsertX decided to go solo offering it own flavor of UI minimalism.
 
-InsertX is designed to make simple websites fast and fun! I want this framework to be easy and and simple to add your own content.
-
-As Swift4.me grows, which is powered by InsertX, so will InsertX.js. Thank you!
+InsertX is designed make building dynamic websites from static content, super simple! A lot of development is going into this little framework. iOS, responsive content and partial homepage support has already been addded.
 
 Sincerely,
 
