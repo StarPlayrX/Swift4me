@@ -12,7 +12,6 @@ This is how insertX places HTML content:
 ```html
 <!-- insert html file -->
 <insert-X
-	
 	data-fold="snippets" 	  <!-- folder with relative path ./ -->	
 	data-file="assemblyline"  <!-- name of the file -->
 	data-type="html">	  <!-- type of file (txt and html is supported) -->
