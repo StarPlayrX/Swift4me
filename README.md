@@ -19,7 +19,7 @@ This is how insertX places HTML content:
 </insert-X>
 ```
 
-InsertX can also draw minimalistic buttons via this simple markup. Button-X's buttons are fully compatible with desktop and touch devices.
+InsertX can also draw minimalistic buttons via this simple markup.
 
 ```html
 <!-- insert a button (styling and behavior supports both desktop and touch devices) -->
