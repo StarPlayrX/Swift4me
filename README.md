@@ -36,7 +36,7 @@ It is designed to be a standalone framework with it's own CSS, HTML and JS. The 
 
 Initially InsertX was going to use Bootstrap but I was not impressed that BS4.5 still has dependencies to jQuery. I also feel that BS is grown way beyond a simple CSS and HMTL framework. So, InsertX decided to go solo offering it own flavor of UI minimalism.
 
-InsertX is designed make building dynamic websites from static content, super simple! A lot of development is going into this little framework. iOS, responsive content and partial homepage support has already been addded.
+InsertX is designed make building dynamic websites from static content, super simple! A lot of development is going into this little framework. iOS, responsive content and homepage support has already been addded.
 
 Sincerely,
 
