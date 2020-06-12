@@ -1,4 +1,4 @@
-<textarea id="cssserializer" class="clipboard-text"  tabindex="-1">
+<textarea id="cssserializer-txt" class="clipboard-text" tabindex="-1">
 /*
  CSS Serializer for Cocoa Writer Generated Files
  

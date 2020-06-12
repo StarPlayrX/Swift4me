@@ -12,86 +12,108 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         <meta name="description" content="Swift4.me | Swift4me.com (c) 2020"/>
         <meta name="author" content="Todd Bruss"/>
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-        <title>Swift4.me</title>
-        
-        <!-- CSS -->
-        <link href="css/insertX.css" rel="stylesheet"/>
-        
-        <!-- Fonts -->
-        <link href="css/fonts.css" rel="stylesheet"/>
-        
-    </head>
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+                
+                <title>Swift4.me</title>
+                
+                <!-- CSS -->
+                <link href="css/insertX.css" rel="stylesheet"/>
+                
+                <!-- Fonts -->
+                <link href="css/fonts.css" rel="stylesheet"/>
+                
+                </head>
     
     <body>
         
-        <navigation id="navi">
+        <header id="top-nav-bar">
             <website>Swift4.me</website>
-            <span class="bff">Fast Fun Free</span>
+            <span class="bff">Super Fun</span>
             
             <div class="minimal-select">
-                <select class="minimal-default" id="selectmenu" onchange="select(this,true,121)">
+                <select class="minimal-default" id="selectmenu" onchange="select(this)">
                     <option value="">Main Menu</option>
-                    <option value="willynilly-top">Willy Nilly</option>
-                    <option value="hellojson-top">Hello JSON</option>
-                    <option value="assemblyline-top">Assembly Line</option>
-                    <option value="cssserializer-top">CSS Serializer</option>
-                    <option value="snakes_n_ladders-top">Snakes</option>
+                    <option value="fruitloops">Fruit Loops</option>
+                    <option value="willynilly">Willy Nilly</option>
+                    <option value="hellojson">Hello JSON</option>
+                    <option value="assemblyline">Assembly Line</option>
+                    <option value="cssserializer">CSS Serializer</option>
+                    <option value="snakes_n_ladders">Snakes</option>
                 </select>
             </div>
-        </navigation>
+        </header>
         
-        <div id="main-content" class="topper">
-            <!-- Page Content -->
-            <div id="willynilly-top">
-                
+        <main>
+            
+            <!-- To do make this a template that can be written programicallys -->
+            <!-- Fruit Loops -->
+            <div id="fruitloops" class="topper">
+                <section>
+                    <left>
+                        <heading>Fruit Loops</heading>
+                    </left>
+                    <clipboard>
+                        <insert-X
+                            data-fold="snippets"
+                            data-file="fruitloops"
+                            data-type="txt">
+                        </insert-X>
+                    </clipboard>
+                    <right>
+                        <button-X
+                            data-mini="default"
+                            data-clik="text2clip"
+                            data-args="fruitloops"
+                            data-name="Clipboard">
+                        </button-X>
+                    </right>
+                </section>
+                <article>
+                    <insert-X
+                        data-fold="snippets"
+                        data-file="fruitloops"
+                        data-type="html">
+                    </insert-X>
+                </article>
+            </div>
+            
+            <!-- Willy Nilly -->
+            <div id="willynilly">
                 <section>
                     <left>
                         <heading>Willy Nilly</heading>
                     </left>
-                    
                     <clipboard>
-                        
                         <insert-X
                             data-fold="snippets"
                             data-file="willynilly"
                             data-type="txt">
                         </insert-X>
-                        
                     </clipboard>
-                    
                     <right>
                         <button-X
                             data-mini="default"
                             data-clik="text2clip"
-                            data-args="hellojson"
+                            data-args="willynilly"
                             data-name="Clipboard">
                         </button-X>
                     </right>
-                    
                 </section>
-                
                 <article>
-                    
                     <insert-X
                         data-fold="snippets"
                         data-file="willynilly"
                         data-type="html">
                     </insert-X>
-                    
                 </article>
-                
             </div>
             
-            <div id="hellojson-top">
-                
+            <!-- Hello JSON -->
+            <div id="hellojson">
                 <section>
-                    
                     <left>
                         <heading>Hello JSON</heading>
                     </left>
-                    
                     <clipboard>
                         <insert-X
                             data-fold="snippets"
@@ -99,7 +121,6 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                             data-type="txt">
                         </insert-X>
                     </clipboard>
-                    
                     <right>
                         <button-X
                             data-mini="default"
@@ -108,46 +129,31 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                             data-name="Clipboard">
                         </button-X>
                     </right>
-                    
                 </section>
                 
                 <article>
-                    
                     <insert-X
                         data-fold="snippets"
                         data-file="hellojson"
                         data-type="html">
                     </insert-X>
-                    
                 </article>
-                
-                
             </div>
             
-            <div id="assemblyline-top">
-                
+            <!-- Assembly Line -->
+            <div id="assemblyline">
                 <section>
-                    
                     <left>
                         <heading>Assembly Line</heading>
                     </left>
-                    
                     <clipboard>
-                        
-                        <!-- insert text file -->
                         <insert-X
                             data-fold="snippets"
                             data-file="assemblyline"
                             data-type="txt">
                         </insert-X>
-                        
                     </clipboard>
-                    
                     <right>
-                        <!--
-                        insert minimal default button file
-                        supports touch and click events with full animation
-                        -->
                         <button-X
                             data-mini="default"
                             data-clik="text2clip"
@@ -155,83 +161,60 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                             data-name="Clipboard">
                         </button-X>
                     </right>
-                    
                 </section>
-                
                 <article>
-                    
-                    <!-- insert html file -->
                     <insert-X
                         data-fold="snippets"
                         data-file="assemblyline"
                         data-type="html">
                     </insert-X>
-                    
                 </article>
-                
             </div>
             
-            <div id="cssserializer-top">
-                
+            <!-- CSS Serializer -->
+            <div id="cssserializer">
                 <section>
-                    
                     <left>
                         <heading>CSS Serializer</heading>
                     </left>
-                    
                     <clipboard>
-                        
                         <insert-X
                             data-fold="snippets"
                             data-file="cssserializer"
                             data-type="txt">
                         </insert-X>
-                        
                     </clipboard>
-                    
                     <right>
-                        
                         <button-X
                             data-mini="default"
                             data-clik="text2clip"
                             data-args="cssserializer"
                             data-name="Clipboard">
                         </button-X>
-                        
                     </right>
-                    
                 </section>
-                
                 <article>
-                    
                     <insert-X
                         data-fold="snippets"
                         data-file="cssserializer"
                         data-type="html">
                     </insert-X>
-                    
                 </article>
-                
             </div>
-            
-            <div id="snakes_n_ladders-top">
-                
+
+            <!-- Snakes -->
+            <div id="snakes_n_ladders">
                 <section>
-                    
                     <left>
                         <heading>Snakes</heading>
                     </left>
-                    
                     <clipboard>
-                        
                         <insert-X
                             data-fold="snippets"
                             data-file="snakes_n_ladders"
                             data-type="txt">
                         </insert-X>
-                        
                     </clipboard>
-                    
                     <right>
                         <button-X
                             data-mini="default"
@@ -240,24 +223,40 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                             data-name="Clipboard">
                         </button-X>
                     </right>
-                    
                 </section>
-                
                 <article>
-                    
                     <insert-X
                         data-fold="snippets"
                         data-file="snakes_n_ladders"
                         data-type="html">
                     </insert-X>
-                    
                 </article>
-                
             </div>
-            
-        </div>
+        </main>
+        
+        <footer>
+            <website>InsertX.js</website>
+            <span class="bff">Super Simple</span>
+
+            <div class="minimal-select">
+                <select class="minimal-default" id="selectmenu" onchange="select(this)">
+                    <option value="">Main Menu</option>
+                    <option value="fruitloops">Fruit Loops</option>=
+                    <option value="willynilly">Willy Nilly</option>
+                    <option value="hellojson">Hello JSON</option>
+                    <option value="assemblyline">Assembly Line</option>
+                    <option value="cssserializer">CSS Serializer</option>
+                    <option value="snakes_n_ladders">Snakes</option>
+                </select>
+            </div>
+        </footer>
     </body>
 </html>
 
 <!-- insertX.js created by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
 <script src="js/insertX.js"></script>
+
+<!-- smoothscroll polyfill by http://iamdustan.com/smoothscroll/ -->
+<script src="js/smoothscroll.js"></script>
+
+

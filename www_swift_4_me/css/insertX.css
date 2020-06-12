@@ -26,16 +26,6 @@ website {
     padding:15px 5px 15px 15px;
 }
 
-/*
- Offset content (fixed bar)
- */
-:target:before {
-    content:"";
-    display: block;
-    height: 48px;
-    margin-top: -48px;
-}
-
 ::-webkit-scrollbar {
     display: none
 }
@@ -142,7 +132,7 @@ select option {
     font-weight:normal;
 }
 
-navigation {
+header, footer {
     display:block;
     background:rgb(64,128,255);
     height:3rem;
@@ -155,16 +145,12 @@ navigation {
     color:var(--bff-color);
 }
 
-#main-content {
-    overflow-y:scroll;
-    scroll-behavior: smooth;
-    –webkit-overflow-scrolling: touch;
+main {
     width:100%;
-    height:100%;
 }
 
 .topper {
-    margin-top:48px;
+    padding-top:48px;
 }
 
 html {
@@ -179,33 +165,34 @@ body {
     margin:0;
 }
 
-@supports not (-webkit-touch-callout: none ){
-    navigation {
-        top:0;
-    }
-    
-    
+header {
+    top:0;
 }
 
+footer {
+    bottom:0;
+}
+
+@supports not (-webkit-touch-callout: none ){
+}
+
+html, body, main {
+    scroll-behavior: smooth;
+    –webkit-overflow-scrolling: touch;
+    overflow-y:auto;
+    height:100vh;
+}
 
 /* iOS Only Styles */
-@supports (-webkit-touch-callout: none ){
-    
-    html, body, #main-content {
-        scroll-behavior: smooth;
-        –webkit-overflow-scrolling: touch;
-        overflow-y:auto;
-        height:100vh;
-    }
-    
+@supports (-webkit-touch-callout: none) {
     @media screen and (orientation:landscape) {
-        navigation {
-            bottom:0;
+        header {
+            height:0;
+            display:none;
         }
         
         .topper {
-            margin-top:0;
-            margin-bottom:0;
+            padding-top:0;
         }
         
         article, section {
@@ -213,38 +200,31 @@ body {
             padding-right:30px;
         }
         
-        :target:before {
-            content:"";
-            display: block;
-            height: 1px;
-            margin-top: 0;
-            margin-bottom: 0;
+        footer {
+            padding-bottom:15px;
         }
     }
     
     @media screen and (orientation:portrait) {
-        navigation {
-            top:0;
+        footer {
+            display: none;
         }
-        
-        
-        
-        
-        
-        
     }
     
     /* supports Fullscreen Homescreen mode on iOS */
     @media screen and (device-width: 100vw) and (device-height: 100vh) and (orientation:portrait) {
-        navigation, .topper {
+
+        header {
             padding-top:35px;
         }
+         
+        .topper {
+            padding-top:83px;
+        }
         
-        :target:before {
-            content:"";
-            display: block;
-            height: 83px;
-            margin-top: -83px;
+        footer {
+            display:block;
+            padding-bottom:20px;
         }
     }
 }

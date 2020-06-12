@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.5">
+  <style type="text/css">
+    p.p1-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; color: rgba(108, 121, 134, 0.45); background-color: #0a0b0c}
+    p.p2-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #6c7986; background-color: #0a0b0c}
+    p.p3-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c; min-height: 14.0px}
+    p.p4-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc6a5d; background-color: #0a0b0c}
+    p.p5-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #41a1c0; background-color: #0a0b0c}
+    p.p6-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c}
+    p.p7-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #92a1b1; background-color: #0a0b0c}
+    p.p8-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c}
+    p.p9-1591913993 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #67b7a4; background-color: #0a0b0c}
+    span.s1-1591913993 {font: 12.0px Menlo; color: rgba(255, 255, 255, 0.85)}
+    span.s2-1591913993 {color: #fc5fa3}
+    span.s3-1591913993 {color: rgba(255, 255, 255, 0.85)}
+    span.s4-1591913993 {color: #41a1c0}
+    span.s5-1591913993 {color: #fc6a5d}
+    span.s6-1591913993 {color: #67b7a4}
+    span.s7-1591913993 {color: #6c7986}
+    span.s8-1591913993 {color: #a167e6}
+    span.s9-1591913993 {color: #d0bf69}
+  </style>
+</head>
+<body>
+<p class="p1-1591913993">/**</p>
+<p class="p2-1591913993"><span class="s1-1591913993"><span class="Apple-converted-space"> </span></span>Fruit Loops - Fun with For in loops</p>
+<p class="p2-1591913993"><span class="s1-1591913993"><span class="Apple-converted-space"> </span></span>with Strings inside an Array</p>
+<p class="p2-1591913993"><span class="s1-1591913993"><span class="Apple-converted-space"> </span></span>by Todd Bruss (c) 2020 Swift4.me Swift4me.com</p>
+<p class="p1-1591913993"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p3-1591913993"><br></p>
+<p class="p4-1591913993"><span class="s2-1591913993"><b>var</b></span><span class="s3-1591913993"> </span><span class="s4-1591913993">funArray</span><span class="s3-1591913993"> = [</span>"Apple"<span class="s3-1591913993">,</span>"Banana"<span class="s3-1591913993">,</span>"Celery"<span class="s3-1591913993">,</span>"Date"<span class="s3-1591913993">]</span></p>
+<p class="p5-1591913993"><span class="s2-1591913993"><b>let</b></span><span class="s3-1591913993"> </span>spacer<span class="s3-1591913993"> = </span><span class="s5-1591913993">""</span></p>
+<p class="p3-1591913993"><br></p>
+<p class="p6-1591913993"><span class="s2-1591913993"><b>for</b></span> fruit <span class="s2-1591913993"><b>in</b></span> <span class="s6-1591913993">funArray</span> {</p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> let in implied</b></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> cannot mutate fruit here</b></p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span><span class="s8-1591913993">print</span>(fruit)</p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Apple</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Banana</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Celery</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Date</p>
+<p class="p6-1591913993">}</p>
+<p class="p3-1591913993"><br></p>
+<p class="p9-1591913993"><span class="s8-1591913993">print</span><span class="s3-1591913993">(</span>spacer<span class="s3-1591913993">)</span></p>
+<p class="p3-1591913993"><br></p>
+<p class="p6-1591913993"><span class="s2-1591913993"><b>for</b></span> <span class="s2-1591913993"><b>var</b></span> fruit <span class="s2-1591913993"><b>in</b></span> <span class="s6-1591913993">funArray</span> {</p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> var is used fruit can mutate</b></p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span>fruit = <span class="s5-1591913993">"Yummy </span>\(fruit)<span class="s5-1591913993">"</span></p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span><span class="s8-1591913993">print</span>(fruit)</p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Yummy Apple</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Yummy Banana</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Yummy Celery</p>
+<p class="p8-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span>//Yummy Date</p>
+<p class="p6-1591913993">}</p>
+<p class="p3-1591913993"><br></p>
+<p class="p9-1591913993"><span class="s8-1591913993">print</span><span class="s3-1591913993">(</span>spacer<span class="s3-1591913993">)</span></p>
+<p class="p3-1591913993"><br></p>
+<p class="p6-1591913993"><span class="s2-1591913993"><b>for</b></span> <span class="s2-1591913993"><b>var</b></span> (index, fruit) <span class="s2-1591913993"><b>in</b></span> <span class="s6-1591913993">funArray</span>.<span class="s8-1591913993">enumerated</span>() {</p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span>fruit = <span class="s5-1591913993">"Yummy </span>\(fruit)<span class="s5-1591913993">"</span></p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> plus zero is used to avoid not mutated error</b></p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span>index = index <span class="s8-1591913993">+</span> <span class="s9-1591913993">0</span></p>
+<p class="p3-1591913993"><span class="Apple-converted-space">    </span></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> original is unchanged</b></p>
+<p class="p7-1591913993"><span class="s3-1591913993"><span class="Apple-converted-space">    </span></span><span class="s7-1591913993">//MARK:</span><b> writes back to the original arrays</b></p>
+<p class="p6-1591913993"><span class="Apple-converted-space">    </span><span class="s6-1591913993">funArray</span>[index] = fruit</p>
+<p class="p6-1591913993">}</p>
+<p class="p3-1591913993"><br></p>
+<p class="p4-1591913993"><span class="s8-1591913993">print</span><span class="s3-1591913993">(</span>"Mutated"<span class="s3-1591913993">,</span><span class="s6-1591913993">funArray</span><span class="s3-1591913993">)</span></p>
+<p class="p3-1591913993"><br></p>
+<p class="p8-1591913993">//Mutated ["Yummy Apple", "Yummy Banana", "Yummy Celery", "Yummy Date"]</p>
+</body>
+</html>

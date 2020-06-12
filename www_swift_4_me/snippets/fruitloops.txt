@@ -1,0 +1,54 @@
+<textarea id="fruitloops-txt" class="clipboard-text" tabindex="-1">
+/**
+ Fruit Loops - Fun with For in Loops
+ with Strings inside an Array
+ by Todd Bruss (c) 2020 Swift4.me Swift4me.com
+ */
+ 
+var funArray = ["Apple","Banana","Celery","Date"]
+let spacer = ""
+ 
+for fruit in funArray {
+    
+    //MARK: let in implied
+    //MARK: cannot mutate fruit here
+    
+    print(fruit)
+    
+    //Apple
+    //Banana
+    //Celery
+    //Date
+}
+ 
+print(spacer)
+ 
+for var fruit in funArray {
+    
+    //MARK: var is used fruit can mutate
+    fruit = "Yummy \(fruit)"
+    print(fruit)
+    
+    //Yummy Apple
+    //Yummy Banana
+    //Yummy Celery
+    //Yummy Date
+}
+ 
+print(spacer)
+ 
+for var (index, fruit) in funArray.enumerated() {
+    fruit = "Yummy \(fruit)"
+    
+    //MARK: plus zero is used to avoid not mutated error
+    index = index + 0
+    
+    //MARK: original is unchanged
+    //MARK: writes back to the original arrays
+    funArray[index] = fruit
+}
+ 
+print("Mutated",funArray)
+ 
+//Mutated ["Yummy Apple", "Yummy Banana", "Yummy Celery", "Yummy Date"]
+</textarea>

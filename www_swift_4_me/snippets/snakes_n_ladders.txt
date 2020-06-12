@@ -1,4 +1,4 @@
-<textarea id="snakes_n_ladders" class="clipboard-text"  tabindex="-1">
+<textarea id="snakes_n_ladders-txt" class="clipboard-text"  tabindex="-1">
 /*
  Snakes and Ladders
  Full Game Sim, War Games style
