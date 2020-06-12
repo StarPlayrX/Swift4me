@@ -2,7 +2,7 @@
 Swift4.me minimnal UI style website
 built on the InsertX.JS framework
 
-InsertX.JS Alpha v0.0.5 is included in this repo
+InsertX.JS alpha v0.0.5 is included in this repo
 It is a minimalistic dynamic framework for building simple websites.
 
 InsertX uses fetch to build dynamic web pages from static html content. To use fetch you must run the page from an http web server. I use Perfect3 from PerfectlySoft, but you use any HTTP web server like Apache, NGINX, Node, Perfect, Vapor, Kitura, etc.
