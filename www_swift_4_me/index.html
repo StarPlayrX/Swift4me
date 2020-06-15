@@ -4,7 +4,7 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
 */ -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
     
     <head>
         <meta charset="utf-8"/>
@@ -49,22 +49,27 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
             <title>Swift4.me</title>
             
             <!-- CSS -->
-            <link href="css/insertX.css" rel="stylesheet"/>
+            <link href="css/MeshUI.css" rel="stylesheet"/>
             
             <!-- Fonts -->
             <link href="css/fonts.css" rel="stylesheet"/>
             
             </head>
     
-    <body>
+    <body id="body">
         
+        <main id="main">
+            
         <header id="top-nav-bar">
             <website>Swift4.me</website>
-            <span class="bff"></span>
             
             <div class="minimal-select">
-                <select class="minimal-default" id="selectmenu" onchange="select(this)">
+                <select class="minimal-default" id="selectmenu"
+                    ontouchend="minimalSelect(this,'minimal-default')"
+                    ontouchstart="minimalSelect(this,'minimal-default-down')"
+                    onchange="select(this)">
                     <option value="">Main Menu</option>
+                    <option value="welcome">Welcome</option>
                     <option value="fruitloops">Fruit Loops</option>
                     <option value="willynilly">Willy Nilly</option>
                     <option value="hellojson">Hello JSON</option>
@@ -74,12 +79,45 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                 </select>
             </div>
         </header>
-        
-        <main>
+   
             
-            <!-- To do make this a template that can be written programicallys -->
+            <topper></topper>
+            <!-- To do make this a template a for in loop within MeshUI -->
+            
             <!-- Fruit Loops -->
-            <div id="fruitloops" class="topper">
+            <div id="welcome">
+                <section>
+                    <left>
+                        <heading>Welcome</heading>
+                    </left>
+                    <clipboard>
+                        <insert-X
+                            data-fold="snippets"
+                            data-file="welcome"
+                            data-type="txt">
+                        </insert-X>
+                    </clipboard>
+                    <right>
+                        <button-X
+                            data-mini="default"
+                            data-clik="text2clip"
+                            data-args="welcome"
+                            data-name="Clipboard">
+                        </button-X>
+                    </right>
+                </section>
+                <article>
+                    <insert-X
+                        data-fold="snippets"
+                        data-file="welcome"
+                        data-type="html">
+                    </insert-X>
+                </article>
+            </div>
+            
+            
+            <!-- Fruit Loops -->
+            <div id="fruitloops">
                 <section>
                     <left>
                         <heading>Fruit Loops</heading>
@@ -264,16 +302,20 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                     </insert-X>
                 </article>
             </div>
-        </main>
-        
-        <footer>
-            <website>Foundation</website>
-            <span class="bff"></span>
+            
+            <spacer style="display:block;" id="spacer"></sapcer>
+
+        <footer id="bot-nav-bar">
+            <website>MeshUI.js</website>
             
             <div class="minimal-select">
-                <select class="minimal-default" id="selectmenu" onchange="select(this)">
+                <select class="minimal-default" id="selectmenu"
+                    ontouchend="minimalSelect(this,'minimal-default')"
+                    ontouchstart="minimalSelect(this,'minimal-default-down')"
+                    onchange="select(this)">
                     <option value="">Main Menu</option>
-                    <option value="fruitloops">Fruit Loops</option>=
+                    <option value="welcome">Welcome</option>
+                    <option value="fruitloops">Fruit Loops</option>
                     <option value="willynilly">Willy Nilly</option>
                     <option value="hellojson">Hello JSON</option>
                     <option value="assemblyline">Assembly Line</option>
@@ -282,13 +324,17 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                 </select>
             </div>
         </footer>
+        
+        </main>
+                                                                                             
     </body>
 </html>
 
-<!-- insertX.js created by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
-<script src="js/insertX.js"></script>
+<!-- MeshUI.js created by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
+<script src="js/MeshUI.js"></script>
 
 <!-- smoothscroll polyfill by http://iamdustan.com/smoothscroll/ -->
+<!-- ES6 refactoring, long scroll enhancements and iOS bug fixes by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
 <script src="js/smoothscroll.js"></script>
 
 

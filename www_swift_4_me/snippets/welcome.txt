@@ -1,0 +1,31 @@
+<textarea id="welcome-txt" class="clipboard-text" tabindex="-1"> 
+let Welcome = "Welcome to Swift4.me :)"
+ 
+let CodeSnippets = "For Everyone!"
+ 
+/*
+ For the absolute best mobile
+ experience on an iPhone,
+ add this web app to your home screen.
+ This will give you the Fullscreen UI.
+ */
+ 
+/*
+ For the absolute second best mobile
+ experience on an iPhone,
+ touch the address bar and pull it up.
+ This will invoke the Minimal UI.
+ */
+ 
+/*
+ For the absolutethird best mobile
+ experience on an iPhone,
+ Try rotating the device to landscape & back.
+ This will give you a Minimal like UI.
+*/
+ 
+var Sincerely = "Todd Bruss, Swift Guru"
+ 
+print(Welcome, terminator: "\n\n")
+print(Sincerely)
+</textarea>

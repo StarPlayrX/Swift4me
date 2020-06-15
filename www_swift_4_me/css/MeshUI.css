@@ -1,0 +1,279 @@
+/*
+ CSS by Todd Bruss (c) 2020 MeshUI.js, Swift4.me, Swift4me.com
+ Minimal Blue Dark UI by Todd Bruss (c) 2020
+ */
+
+/*
+ MARK: CSS Variables
+ */
+:root {
+    --minimal-default-color: #4080ff;
+    --minimal-default-light-color: white;
+    --minimal-default-focus-color: rgba(240, 240, 240, 1.0);
+    --minimal-default-hover-color: rgba(250, 250, 250, 1.0);
+    --html-bg-color: rgba(90,90,90, 1.0);
+    --section-bg-color: rgba(30,30,30, 1.0);
+    --article-bg-color: #0a0b0c;
+    --no-color: transparent;
+}
+
+website {
+    color:var(--minimal-default-light-color);
+    font-family:Menlo;
+    font-size:1rem;
+    line-height:1.2rem;
+    display:inline-block;
+    padding:15px 0px 15px 15px;
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+right {
+    float:right;
+}
+
+left {
+    float:left;
+}
+
+button {
+    padding: 8px 16px 8px 16px;
+}
+
+button {
+    text-align:center;
+    color: var(--minimal-default-color);
+    font: Helvetica, Arial;
+    font-size: 16px;
+    border: 1px solid var(--minimal-default-color);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    cursor: auto;
+    display: block;
+}
+
+select {
+    color: var(--minimal-default-color);
+    font: Helvetica, Arial;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid var(--minimal-default-color);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    cursor: auto;
+    padding: 8px 0px 8px 20px;
+    width:120px;
+    text-align:center;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.minimal-select {
+    float: right;
+    padding-right:15px;
+    margin-top:4px;
+}
+
+.minimal-default, .minimal-default-up {
+    background: var(--minimal-default-light-color);
+}
+
+/* MARK: MicroSoft Edge only */
+@supports (-ms-ime-align:auto) {
+    select {
+        padding: 8px 0px 8px 15px;
+    }
+    
+    .minimal-select {
+        margin-top:5px;
+    }
+}
+
+/* MARK: Chrome only, excludes Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    .minimal-select {
+        margin-top:6px;
+    }
+}
+
+/* MARK: Firefox only */
+@-moz-document url-prefix() {
+    select {
+        padding: 8px 0px 8px 0px;
+        width:120px;
+        text-align:center;
+    }
+    
+    *:-moz-focusring {
+        color: var(--no-color);
+        text-shadow: 0 0 0 var(--minimal-default-color);
+        transition: color 0ms;
+    }
+}
+
+
+website, heading, clipboard, button, select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+select {
+    font-weight:normal;
+}
+
+.minimal-default:hover, .minimal-default-up:hover, select:hover {
+    background: var(--minimal-default-hover-color);
+}
+
+* {
+    -webkit-tap-highlight-color:  var(--no-color);
+}
+
+.minimal-default-down {
+    background: var(--minimal-default-focus-color);
+    box-shadow: 0 0 0 2px var(--minimal-default-light-color);
+    outline:none;
+}
+
+.minimal-default-down:focus,
+.minimal-default:focus {
+    background: var(--minimal-default-focus-color);
+    box-shadow: 0 0 0 2px var(--minimal-default-light-color);
+    outline:none;
+}
+
+heading {
+    color:var(--minimal-default-light-color);
+    font-family:Menlo;
+    font-size:1.5rem;
+    line-height:2.75rem;
+    display:inline-block;
+}
+
+clipboard {
+    position: relative;
+    z-index: -2;
+    font-size: 0;
+    opacity: 0;
+}
+
+.clipboard-text {
+    width: 0;
+}
+
+section {
+    margin:16px 15px 0 15px;
+    border-radius: 12px 12px 0px 0px;
+    padding:15px;
+    display:block;
+    height:2.5rem;
+    background: var(--section-bg-color);
+    box-shadow: inset 0 0 1px 1px var(--section-bg-color);
+}
+
+article {
+    border-radius: 0px 0px 12px 12px;
+    margin:0 15px 0 15px;
+    padding:15px;
+    background:var(--article-bg-color);
+    box-shadow: inset 0 0 1px 1px var(--article-bg-color);
+}
+
+header, footer {
+    display:block;
+    background:rgb(64,128,255);
+    height:3rem;
+    width:100%;
+    position:fixed;
+}
+
+topper {
+    display: block;
+    padding-top:48px;
+}
+
+html {
+    -webkit-locale: "en";
+    background:var(--html-bg-color);
+    display:inline;
+}
+
+body {
+    font-family: Menlo, "Apple Color Emoji";
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    display:block;
+}
+
+header {
+    top:0;
+    transition: all 0.2s ease-in-out;
+}
+
+footer {
+    bottom:0;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Non iPhone Styles */
+@supports not (-webkit-touch-callout: none ) {}
+
+/* Seems this stuff all needs to match for smooth scrolling to work */
+html, body, main { height:100%;}
+
+main {
+    scroll-behavior: smooth;
+    –webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    width:100%;
+}
+
+/* iOS iPhone Only Styles */
+@supports (-webkit-touch-callout: none) {
+	
+    /* MARK: fullscreen */
+    @media screen and (device-width: 100vw) and (device-height: 100vh) {
+        
+        body { width: 100vw, height: 100vh }
+		
+        /* MARK: iPhoneXs Max, iPhoneX style */
+        @media (device-height: 896px), (device-height: 812px) {
+            header { padding-top:35px }
+            topper { height:35px }
+            footer { padding-bottom: 20px }
+        }
+        
+        /* MARK: iPhone 8plus, 8 style */
+        @media (device-height: 736px), (device-height: 667px), (device-height:568px) {
+            header { padding-top:20px }
+            topper { height:20px }
+        }
+    }
+    
+    /* MARK: landscape */
+    @media screen and (orientation:landscape)  {
+        
+        /* MARK: iPhoneXs Max, iPhoneX style */
+        @media (device-height: 896px), (device-height: 812px) {
+        	article, section { padding-left: 30px; padding-right: 30px }
+        	footer { padding-bottom: 20px }
+        }
+        
+        topper, header { height:0; display: none }
+    }
+    
+    /* MARK: iPhone 8plus, 8 style, all screens */
+    @media screen (device-height: 736px), (device-height: 667px), (device-height:568px)  {
+        footer { padding-bottom: 0 }
+    }
+    
+}
