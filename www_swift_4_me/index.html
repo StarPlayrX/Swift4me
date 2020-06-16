@@ -42,7 +42,7 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1668x2388.png"/>
         <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1668x2224.png"/>
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1536x2048.png"/>-->
-      
+        
         
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             
@@ -60,30 +60,31 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         
         <main id="main">
             
-        <header id="top-nav-bar">
-            <website>Swift4.me</website>
+            <header id="top-nav-bar">
+                <website>Swift4.me</website>
+                
+                <div class="minimal-select">
+                    <select class="minimal-default" id="selectmenu"
+                        ontouchend="minimalSelect(this,'minimal-default')"
+                        ontouchstart="minimalSelect(this,'minimal-default-down')"
+                        onchange="select(this)">
+                        <option value="">Main Menu</option>
+                        <option value="welcome">Welcome&nbsp;&nbsp;&nbsp;</option>
+                        <option value="orange">Orange&nbsp;&nbsp;&nbsp;</option>
+                        <option value="fruitloops">Fruit Loops&nbsp;&nbsp;&nbsp;</option>
+                        <option value="willynilly">Willy Nilly&nbsp;&nbsp;&nbsp;</option>
+                        <option value="hellojson">Hello JSON&nbsp;&nbsp;&nbsp;</option>
+                        <option value="assemblyline">Assembly Line&nbsp;&nbsp;&nbsp;</option>
+                        <option value="cssserializer">CSS Serializer&nbsp;&nbsp;&nbsp;</option>
+                    </select>
+                </div>
+            </header>
             
-            <div class="minimal-select">
-                <select class="minimal-default" id="selectmenu"
-                    ontouchend="minimalSelect(this,'minimal-default')"
-                    ontouchstart="minimalSelect(this,'minimal-default-down')"
-                    onchange="select(this)">
-                    <option value="">Main Menu</option>
-                    <option value="welcome">Welcome</option>
-                    <option value="fruitloops">Fruit Loops</option>
-                    <option value="willynilly">Willy Nilly</option>
-                    <option value="hellojson">Hello JSON</option>
-                    <option value="assemblyline">Assembly Line</option>
-                    <option value="cssserializer">CSS Serializer</option>
-                    <option value="snakes_n_ladders">Snakes</option>
-                </select>
-            </div>
-        </header>
-   
             
             <topper></topper>
             <!-- To do make this a template a for in loop within MeshUI -->
             
+    
             <!-- Fruit Loops -->
             <div id="welcome">
                 <section>
@@ -115,6 +116,36 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                 </article>
             </div>
             
+            <!-- Apples N orange -->
+                <div id="orange">
+                    <section>
+                        <left>
+                            <heading>Orange</heading>
+                        </left>
+                        <clipboard>
+                            <insert-X
+                                data-fold="snippets"
+                                data-file="orange"
+                                data-type="txt">
+                            </insert-X>
+                        </clipboard>
+                        <right>
+                            <button-X
+                                data-mini="default"
+                                data-clik="text2clip"
+                                data-args="orange"
+                                data-name="Clipboard">
+                            </button-X>
+                        </right>
+                    </section>
+                    <article>
+                        <insert-X
+                            data-fold="snippets"
+                            data-file="orange"
+                            data-type="html">
+                        </insert-X>
+                    </article>
+                </div>
             
             <!-- Fruit Loops -->
             <div id="fruitloops">
@@ -272,61 +303,62 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
                 </article>
             </div>
             
+            
             <!-- Snakes -->
-            <div id="snakes_n_ladders">
-                <section>
-                    <left>
-                        <heading>Snakes</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="snakes_n_ladders"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="snakes_n_ladders"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="snakes_n_ladders"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
+            <!--<div id="snakes_n_ladders">
+            <section>
+            <left>
+            <heading>Snakes</heading>
+            </left>
+            <clipboard>
+            <insert-X
+            data-fold="snippets"
+            data-file="snakes_n_ladders"
+            data-type="txt">
+            </insert-X>
+            </clipboard>
+            <right>
+            <button-X
+            data-mini="default"
+            data-clik="text2clip"
+            data-args="snakes_n_ladders"
+            data-name="Clipboard">
+            </button-X>
+            </right>
+            </section>
+            <article>
+            <insert-X
+            data-fold="snippets"
+            data-file="snakes_n_ladders"
+            data-type="html">
+            </insert-X>
+            </article>
+            </div>-->
             
-            <spacer style="display:block;" id="spacer"></sapcer>
-
-        <footer id="bot-nav-bar">
-            <website>MeshUI.js</website>
-            
-            <div class="minimal-select">
-                <select class="minimal-default" id="selectmenu"
-                    ontouchend="minimalSelect(this,'minimal-default')"
-                    ontouchstart="minimalSelect(this,'minimal-default-down')"
-                    onchange="select(this)">
-                    <option value="">Main Menu</option>
-                    <option value="welcome">Welcome</option>
-                    <option value="fruitloops">Fruit Loops</option>
-                    <option value="willynilly">Willy Nilly</option>
-                    <option value="hellojson">Hello JSON</option>
-                    <option value="assemblyline">Assembly Line</option>
-                    <option value="cssserializer">CSS Serializer</option>
-                    <option value="snakes_n_ladders">Snakes</option>
-                </select>
-            </div>
-        </footer>
+            <spacer style="display:block;" id="spacer"></spacers>
+                
+                <footer id="bot-nav-bar">
+                    <website>By Todd Bruss</website>
+                    
+                    <div class="minimal-select">
+                        <select class="minimal-default" id="selectmenu"
+                            ontouchend="minimalSelect(this,'minimal-default')"
+                            ontouchstart="minimalSelect(this,'minimal-default-down')"
+                            onchange="select(this)">
+                            <option value="">Main Menu</option>
+                            <option value="welcome">Welcome </option>
+                            <option value="orange">Orange </option>
+                            <option value="fruitloops">Fruit Loops </option>
+                            <option value="willynilly">Willy Nilly </option>
+                            <option value="hellojson">Hello JSON </option>
+                            <option value="assemblyline">Assembly Line </option>
+                            <option value="cssserializer">CSS Serializer </option>
+                        </select>
+                    </div>
+                </footer>
+                
+                </main>
         
-        </main>
-                                                                                             
     </body>
 </html>
 

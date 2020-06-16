@@ -90,8 +90,10 @@ select {
         padding: 8px 0px 8px 15px;
     }
     
+    
     .minimal-select {
-        margin-top:5px;
+        margin-top: 5px;
+        margin-right: 15px;
     }
 }
 
@@ -135,7 +137,10 @@ select {
 
 * {
     -webkit-tap-highlight-color:  var(--no-color);
+
 }
+
+
 
 .minimal-default-down {
     background: var(--minimal-default-focus-color);
@@ -193,11 +198,25 @@ header, footer {
     height:3rem;
     width:100%;
     position:fixed;
+    left:0;
+    padding:0;
+}
+
+header {
+    top:0;
+}
+
+footer {
+    bottom:0;
 }
 
 topper {
     display: block;
     padding-top:48px;
+}
+
+spacer {
+    display:block;
 }
 
 html {
@@ -207,22 +226,12 @@ html {
 }
 
 body {
-    font-family: Menlo, "Apple Color Emoji";
     padding:0;
     margin:0;
     overflow:hidden;
     display:block;
 }
 
-header {
-    top:0;
-    transition: all 0.2s ease-in-out;
-}
-
-footer {
-    bottom:0;
-    transition: all 0.2s ease-in-out;
-}
 
 /* Non iPhone Styles */
 @supports not (-webkit-touch-callout: none ) {}
@@ -237,14 +246,15 @@ main {
     width:100%;
 }
 
+
 /* iOS iPhone Only Styles */
 @supports (-webkit-touch-callout: none) {
-	
+    
     /* MARK: fullscreen */
     @media screen and (device-width: 100vw) and (device-height: 100vh) {
         
-        body { width: 100vw, height: 100vh }
-		
+        body { width: 100vw; height: 100vh }
+        
         /* MARK: iPhoneXs Max, iPhoneX style */
         @media (device-height: 896px), (device-height: 812px) {
             header { padding-top:35px }
@@ -256,6 +266,9 @@ main {
         @media (device-height: 736px), (device-height: 667px), (device-height:568px) {
             header { padding-top:20px }
             topper { height:20px }
+            select {
+                margin-top:1px;
+            }
         }
     }
     
@@ -264,16 +277,41 @@ main {
         
         /* MARK: iPhoneXs Max, iPhoneX style */
         @media (device-height: 896px), (device-height: 812px) {
-        	article, section { padding-left: 30px; padding-right: 30px }
-        	footer { padding-bottom: 20px }
+            article, section {
+                padding-left: 30px;
+                padding-right: 30px;
+                
+            }
+            footer { padding-bottom: 20px }
         }
         
-        topper, header { height:0; display: none }
+        topper, header { height:0; display: none}
     }
     
     /* MARK: iPhone 8plus, 8 style, all screens */
-    @media screen (device-height: 736px), (device-height: 667px), (device-height:568px)  {
+    @media screen and (device-height: 736px), (device-height: 667px), (device-height:568px)  {
         footer { padding-bottom: 0 }
+        select {
+            margin-top:1px;
+        }
+    }
+    
+    /* MARK: iPhone 8plus, 8 style, all screens */
+    @media screen  and (max-width:320px)  {
+        footer { padding-bottom: 0 }
+        heading {
+            font-size: 1.05rem;
+            line-height: 2.85rem;
+        }
+        header {
+            padding-left:7.5px;
+            padding-right:0;
+        }
+        select {
+            margin-top:1px;
+        }
+        
+        
     }
     
 }

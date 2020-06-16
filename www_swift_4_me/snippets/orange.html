@@ -1,0 +1,43 @@
+
+  <style type="text/css">
+	snippet { background-color: #0a0b0c}
+    p.p1-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c}
+    p.p2-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c; min-height: 14.0px}
+    p.p3-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c}
+    p.p4-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc5fa3; background-color: #0a0b0c}
+    p.p5-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 21.0px Helvetica; color: #ffffff; color: rgba(255, 255, 255, 0.4)}
+    p.p6-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p7-1592235122 {margin: 0.0px 0.0px 0.0px 0.0px; font: 27.0px Helvetica; color: #ffffff; color: rgba(255, 255, 255, 0.85)}
+    span.s1-1592235122 {color: #fc5fa3}
+    span.s2-1592235122 {color: #41a1c0}
+    span.s3-1592235122 {color: #d0a8ff}
+    span.s4-1592235122 {color: #fc6a5d}
+    span.s5-1592235122 {font: 12.0px 'Apple Color Emoji'; color: #fc6a5d}
+    span.s6-1592235122 {color: rgba(255, 255, 255, 0.85)}
+    span.s7-1592235122 {color: #a167e6}
+    span.s8-1592235122 {color: #67b7a4}
+    span.s9-1592235122 {font: 27.0px 'Apple Color Emoji'}
+  </style>
+
+<snippet>
+<p class="p1-1592235122"><span class="s1-1592235122"><b>import</b></span> Foundation</p>
+<p class="p2-1592235122"><br></p>
+<p class="p3-1592235122">/*</p>
+<p class="p3-1592235122"><span class="Apple-converted-space"> </span>Apples N Oranges</p>
+<p class="p3-1592235122"><span class="Apple-converted-space"> </span>Did set Will set</p>
+<p class="p3-1592235122"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p1-1592235122"><span class="s1-1592235122"><b>var</b></span> <span class="s2-1592235122">fruit</span> : <span class="s3-1592235122">String</span> = <span class="s4-1592235122">"</span><span class="s5-1592235122">🍏</span><span class="s4-1592235122">"</span><span class="Apple-converted-space">  </span>{</p>
+<p class="p3-1592235122"><span class="s6-1592235122"><span class="Apple-converted-space">    </span></span><span class="s1-1592235122"><b>didSet</b></span><span class="s6-1592235122"> { </span>//called when item changes</p>
+<p class="p1-1592235122"><span class="Apple-converted-space">        </span><span class="s7-1592235122">print</span>(<span class="s4-1592235122">"Now I'm a </span>\(<span class="s8-1592235122">fruit</span>)<span class="s4-1592235122">"</span>)</p>
+<p class="p1-1592235122"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4-1592235122"><span class="s6-1592235122"><span class="Apple-converted-space">    </span></span><b>willSet</b><span class="s6-1592235122"> {</span></p>
+<p class="p1-1592235122"><span class="Apple-converted-space">        </span><span class="s7-1592235122">print</span>(<span class="s4-1592235122">"I was a </span>\(<span class="s8-1592235122">fruit</span>)<span class="s4-1592235122">"</span>)</p>
+<p class="p1-1592235122"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1-1592235122">}</p>
+<p class="p2-1592235122"><br></p>
+<p class="p2-1592235122"><br></p>
+<p class="p5-1592235122">Output</p>
+<p class="p7-1592235122">I was a <span class="s9-1592235122">🍏</span></p>
+<p class="p7-1592235122">Now I'm a <span class="s9-1592235122">🍊</span></p>
+</snippet>
+

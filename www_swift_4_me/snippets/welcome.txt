@@ -20,11 +20,14 @@ let CodeSnippets = "For Everyone!"
 /*
  For the absolutethird best mobile
  experience on an iPhone,
- Try rotating the device to landscape & back.
- This will give you a Minimal like UI.
+ Use it like it is out of the box.
+ This will give you a nice UX.
 */
- 
-var Sincerely = "Todd Bruss, Swift Guru"
+
+/* This site is powered by MeshUI */
+/*  Copyright 2020 by Todd Bruss  */
+
+var Sincerely = "Todd Bruss"
  
 print(Welcome, terminator: "\n\n")
 print(Sincerely)

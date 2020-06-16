@@ -31,7 +31,9 @@ const _S = {
     start           : 'start',
     topbar          : 'top-nav-bar',
     bottombar       : 'bot-nav-bar',
-    spacer          : 'super-spacer',
+    spacer          : 'spacer',
+    px              : 'px',
+    resize          : 'resize',
     
 }
 
@@ -121,7 +123,7 @@ const scrollView = menu => {
     let pos = m.style.position
     let top = m.style.top
     m.style.position = _S.relative
-    m.style.top = `-${tb + _I.space}px`
+    m.style.top = `-${tb + _I.space + _S.px}`
     m.scrollIntoView({behavior: _S.smooth, block: _S.start})
     m.style.top = top
     m.style.position = pos
@@ -146,13 +148,10 @@ const minimalSelect = (obj, def) => {
 const superSpacer = _ => {
     try {
         let tb = _O.d.getElementById(_S.bottombar).clientHeight
-            _O.d.getElementById('spacer').style.height = String(tb + _I.space + 'px')
+        _O.d.getElementById(_S.spacer).style.height = String(tb + _I.space + _S.px)
     } catch (error) {
        log(error)
     }
-       
-  
-   
 }
 
 //MARK: Startup insertX.js
@@ -239,23 +238,23 @@ _O.w.addEventListener('resize',  function(event) {
     }
     
     //MARK: iPhone X, iPhone Xs, iPhone Xs Max, iPhone Xʀ
-    if ( orientation === portrait && !fullscreen && isX ) {
-        if ( screenX == displayY && screenY == displayX && windowX == displayX && windowY == displayY - _177px ) {
+    if ( orientation === portrait && !fullscreen && isX && windowX == displayX ) {
+        if ( screenX == displayY && screenY == displayX && windowY == displayY - _177px ) {
             setScreen( padB, vh )
-        } else if ( screenX == displayX && screenY == displayY && windowX == displayX && windowY == displayY - _177px ) {
+        } else if ( screenX == displayX && screenY == displayY && windowY == displayY - _177px ) {
             setScreen( padZ, per )
-        } else if ( screenX == displayX && screenY == displayY && windowX == displayX && windowY >= displayY - _96px ) {
+        } else if ( screenX == displayX && screenY == displayY && windowY >= displayY - _96px ) {
             setScreen( padB, per )
         }
     }
     
     //MARK: iPhone 8plus, iPhone 8
-    if ( orientation === portrait && !fullscreen && !isX ) {
-        if ( screenX == displayY && screenY == displayX && windowX == displayX && windowY == displayY - _114px  ) {
+    if ( orientation === portrait && !fullscreen && !isX && windowX == displayX  ) {
+        if ( screenX == displayY && screenY == displayX && windowY == displayY - _114px  ) {
             setScreen( padZ, vh )
-        } else if ( screenX == displayX && screenY == displayY && windowX == displayX && windowY == displayY - _114px ) {
+        } else if ( screenX == displayX && screenY == displayY && windowY == displayY - _114px ) {
             setScreen( padZ, per )
-        } else if ( screenX == displayX && screenY == displayY && windowX == displayX && windowY >= displayY - _40px ) {
+        } else if ( screenX == displayX && screenY == displayY && windowY >= displayY - _40px ) {
             setScreen( padZ, per )
         }
     }

@@ -1,0 +1,24 @@
+<textarea id="oranges-txt" class="clipboard-text"  tabindex="-1">
+import Foundation
+ 
+/*
+ Apples N Oranges
+ Did set will set
+ */
+ 
+var fruit : String = "🍏"  {
+    didSet { //called when item changes
+        print("Now I'm a \(fruit)")
+    }
+    willSet {
+        print("I was a \(fruit)")
+    }
+}
+ 
+fruit = "🍊"
+
+/*:  ### Output
+ ## I was a 🍏
+ ## Now I'm a 🍊
+ */
+</textarea>
