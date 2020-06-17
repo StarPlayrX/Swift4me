@@ -25,7 +25,7 @@ const smoothscroll = _ => {
     
     function scrollElement(x,y) { 0, this.scrollTop = y }
     
-    const ease = k => { return 0.5 * (1 - Math.cos(Math.PI * k)) }
+    const ease = k => 0.5 * (1 - Math.cos(Math.PI * k))
     
     const shouldBailOut = firstArg => {
         if (
@@ -55,7 +55,7 @@ const smoothscroll = _ => {
         return overflowValue === 'auto' || overflowValue === 'scroll'
     }
     
-    const isScrollable = el => { return hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y') }
+    const isScrollable = el => hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y')
     
     const findScrollableParent = el => {
         while (el !== d.body && !isScrollable(el))
@@ -69,8 +69,8 @@ const smoothscroll = _ => {
         let value
         let currentY
         
-        var distance = context.y - context.startY
-        var multiplier = 1
+        let distance = context.y - context.startY;
+        let multiplier = 1;
         
         if (distance < 0 ) { distance *= -1 }
         
@@ -209,3 +209,4 @@ const smoothscroll = _ => {
 }
 
 smoothscroll()
+

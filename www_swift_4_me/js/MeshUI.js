@@ -153,8 +153,9 @@ const superSpacer = _ => {
 const init = _ =>
 insertFile(_S.X)
 insertBtns(_S.B)
-startup(_S.menu)
 reset(_S.menu)
+startup(_S.menu)
+
 superSpacer()
 
 init()
@@ -174,11 +175,12 @@ const setScreen = (padding,height) => {
     body.style.height = height
 }
 
-window.addEventListener('touchend', e => {
-    window.scrollTo(0,0)
+
+_O.w.addEventListener('touchend', _ => {
+    _O.w.scrollTo(0,0)
 });
 
-_O.w.addEventListener('resize',  event => {
+_O.w.addEventListener('resize', _ => {
     let w = _O.w //window
     let d = _O.d //document
     

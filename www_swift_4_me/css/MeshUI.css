@@ -193,7 +193,6 @@ article {
 }
 
 header, footer {
-    display:block;
     background:rgb(64,128,255);
     height:3rem;
     width:100%;
@@ -204,15 +203,11 @@ header, footer {
 header {
     top:0;
     position:fixed;
-    z-index:10;
-    display:block;
 }
 
 footer {
     bottom:0;
     position:fixed;
-    z-index:10;
-
 }
 
 topper {
@@ -232,23 +227,25 @@ html {
     width:100%;
 }
 
-main {
-    height:100%;
-    width:100%;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-}
 
-body {
+
+
+html, body {
     padding:0;
     margin:0;
     height:100%;
     width:100%;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+    overflow-y:hidden;
 }
+
+main {
+    height:100%;
+    width:100%;
+    overflow:scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+}
+
 
 
 /* Non iPhone Styles */
