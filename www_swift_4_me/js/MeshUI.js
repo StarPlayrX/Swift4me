@@ -63,19 +63,12 @@ const insertBtns = _ => {
         let ar = x.dataset.args
         let na = x.dataset.name
         
-        let ck = cl + "('" + ar + "') "
-        let up = _B.this + _B.comma + "'" + _B.mini + _B.dash + mi
-        let dn = _B.this + _B.comma + "'" + _B.mini + _B.dash + mi + _B.dash + _B.down
+        let ck = `${cl}('${ar}') `
+        let up = `${_B.this + _B.comma}'${_B.mini}${_B.dash}${mi}`
+        let dn = `${_B.this + _B.comma}'${_B.mini}${_B.dash}${mi}${_B.dash}${_B.down}`
         
         //MARK: To Do - loop over the guts for this button? Come up with a pattern for future.
-        let bn = "<button onclick=" +
-        ck + "onmouseup=minimalButton(" +
-        up + "') onmousedown=minimalButton(" +
-        dn + "') onmouseleave=minimalButton(" +
-        up + "') ontouchstart=minimalButton(" +
-        dn + "') ontouchend=minimalButton(" +
-        up + "') class='" + _B.mini + _B.dash + mi + "'>"+
-        na + "</button>"
+        let bn = `<button onclick=${ck}onmouseup=minimalButton(${up}') onmousedown=minimalButton(${dn}') onmouseleave=minimalButton(${up}') ontouchstart=minimalButton(${dn}') ontouchend=minimalButton(${up}') class='${_B.mini}${_B.dash}${mi}'>${na}</button>`
         
         x.insertAdjacentHTML(_S.end, bn)
         
@@ -107,7 +100,7 @@ const startup = _ => {
 
 //MARK: copy text to clipboard
 const text2clip = utf8 => {
-    let text = document.getElementById(utf8 + '-txt')
+    let text = document.getElementById(`${utf8}-txt`)
     console.log(text)
     text.select()
     _O.d.execCommand(_S.copy)
@@ -115,11 +108,12 @@ const text2clip = utf8 => {
 }
 
 //MARK: JavaScript only scrolling
-const scrollView = menu => {
+const scrollView = ({value}) => {
+
     superSpacer()
 
     let tb = _O.d.getElementById(_S.topbar).clientHeight
-    let m = _O.d.getElementById(menu.value)
+    let m = _O.d.getElementById(value)
     let pos = m.style.position
     let top = m.style.top
     m.style.position = _S.relative
@@ -142,6 +136,7 @@ const minimalButton = (obj, def) => {
 }
 
 const minimalSelect = (obj, def) => {
+
     obj.className = def
 }
 
@@ -169,16 +164,21 @@ const log = _ => {
     console.log(_)
 }
 
+const xxx = body.clientHeight;
 
 
-var isScreenDirty = false
+const isScreenDirty = false;
 
 const setScreen = (padding,height) => {
     _O.d.getElementById(_S.bottombar).style.padding = padding
     body.style.height = height
 }
 
-_O.w.addEventListener('resize',  function(event) {
+window.addEventListener('touchend', e => {
+    window.scrollTo(0,0)
+});
+
+_O.w.addEventListener('resize',  event => {
     let w = _O.w //window
     let d = _O.d //document
     
@@ -202,9 +202,9 @@ _O.w.addEventListener('resize',  function(event) {
     let displayX = min(screenX, screenY)
     let displayY = max(screenX, screenY)
     
-    log("screenX: " + screenX + "  screenY: " + screenY)
-    log("windowX: " + windowX + "  windowY: " + windowY)
-    log("orientation: " +  orientation)
+    log(`screenX: ${screenX}  screenY: ${screenY}`)
+    log(`windowX: ${windowX}  windowY: ${windowY}`)
+    log(`orientation: ${orientation}`)
     
     //resize constants
     let padZ  = "0"
@@ -231,13 +231,13 @@ _O.w.addEventListener('resize',  function(event) {
     //896 - 719 = 177
     //896 - 800 = 96
     
-    var isX = false
+    let isX = false;
     
     if (displayY === largeX || displayY === smallX) {
         isX = true
     }
     
-    //MARK: iPhone X, iPhone Xs, iPhone Xs Max, iPhone Xʀ
+    //MARK: iPhone X, iPhone Xs, iPhone Xs Max, iPhone XÊ
     if ( orientation === portrait && !fullscreen && isX && windowX == displayX ) {
         if ( screenX == displayY && screenY == displayX && windowY == displayY - _177px ) {
             setScreen( padB, vh )
@@ -272,3 +272,4 @@ _O.w.addEventListener('resize',  function(event) {
     
     setTimeout( _ => superSpacer(), second )
 })
+
