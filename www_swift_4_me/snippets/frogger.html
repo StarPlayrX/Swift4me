@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1600864311 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1600864311 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    p.p3-1600864311 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0b0b0c}
+    span.s1-1600864311 {color: #fc5fa3}
+    span.s2-1600864311 {color: #41a1c0}
+    span.s3-1600864311 {color: #d0a8ff}
+    span.s4-1600864311 {color: rgba(255, 255, 255, 0.85)}
+    span.s5-1600864311 {color: #d0bf69}
+  </style>
+</head>
+<body>
+<p class="p1-1600864311"><span class="s1-1600864311"><b>import</b></span> Foundation</p>
+<p class="p2-1600864311"><br></p>
+<p class="p1-1600864311"><span class="s1-1600864311"><b>public</b></span> <span class="s1-1600864311"><b>func</b></span> <span class="s2-1600864311">solution</span>(<span class="s1-1600864311"><b>_</b></span> X : <span class="s3-1600864311">Int</span>, <span class="s1-1600864311"><b>_</b></span> Y : <span class="s3-1600864311">Int</span>, <span class="s1-1600864311"><b>_</b></span> D : <span class="s3-1600864311">Int</span>) -&gt; <span class="s3-1600864311">Int</span> {</p>
+<p class="p3-1600864311"><span class="s4-1600864311"><span class="Apple-converted-space">    </span></span>// write your code in Swift 4.2.1 (Linux)</p>
+<p class="p2-1600864311"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600864311"><span class="Apple-converted-space">    </span><span class="s1-1600864311"><b>if</b></span> X &gt;= Y {</p>
+<p class="p3-1600864311"><span class="s4-1600864311"><span class="Apple-converted-space">        </span></span>//all ready there</p>
+<p class="p1-1600864311"><span class="Apple-converted-space">        </span><span class="s1-1600864311"><b>return</b></span> <span class="s5-1600864311">0</span></p>
+<p class="p1-1600864311"><span class="Apple-converted-space">    </span>} <span class="s1-1600864311"><b>else</b></span> {</p>
+<p class="p2-1600864311"><span class="Apple-converted-space">        </span></p>
+<p class="p3-1600864311"><span class="s4-1600864311"><span class="Apple-converted-space">        </span></span>//distance we need to travel</p>
+<p class="p1-1600864311"><span class="Apple-converted-space">        </span><span class="s1-1600864311"><b>let</b></span> distance = abs(Y - X)</p>
+<p class="p2-1600864311"><span class="Apple-converted-space">        </span></p>
+<p class="p3-1600864311"><span class="s4-1600864311"><span class="Apple-converted-space">        </span></span>//number of jumps</p>
+<p class="p1-1600864311"><span class="Apple-converted-space">        </span><span class="s1-1600864311"><b>var</b></span> frogjump = distance / D</p>
+<p class="p2-1600864311"><span class="Apple-converted-space">        </span></p>
+<p class="p3-1600864311"><span class="s4-1600864311"><span class="Apple-converted-space">        </span></span>//check the remainder</p>
+<p class="p1-1600864311"><span class="Apple-converted-space">        </span><span class="s1-1600864311"><b>if</b></span> distance % D != <span class="s5-1600864311">0</span> {</p>
+<p class="p1-1600864311"><span class="Apple-converted-space">            </span>frogjump += <span class="s5-1600864311">1</span></p>
+<p class="p1-1600864311"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2-1600864311"><br></p>
+<p class="p1-1600864311"><span class="Apple-converted-space">     </span><span class="s1-1600864311"><b>return</b></span> frogjump</p>
+<p class="p2-1600864311"><span class="Apple-converted-space">      </span></p>
+<p class="p1-1600864311"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1-1600864311">}</p>
+</body>
+</html>

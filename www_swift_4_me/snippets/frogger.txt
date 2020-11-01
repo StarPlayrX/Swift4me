@@ -1,0 +1,25 @@
+import Foundation
+ 
+public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    
+    if X >= Y {
+        //all ready there
+        return 0
+    } else {
+        
+        //distance we need to travel
+        let distance = abs(Y - X)
+        
+        //number of jumps
+        var frogjump = distance / D
+        
+        //check the remainder
+        if distance % D != 0 {
+            frogjump += 1
+        }
+ 
+     return frogjump
+      
+    }
+}

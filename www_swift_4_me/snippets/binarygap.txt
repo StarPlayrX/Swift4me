@@ -1,0 +1,30 @@
+import Foundation
+ 
+public func solution(_ N : Int) -> Int {
+    
+    //convert String to Binary Represention
+    let str = String(N, radix: 2)
+    
+    //split binary string
+    var strArray = str.components(separatedBy: "1")
+    //counter
+    var c = 0
+    
+    //init our max Integer
+    var maxInt = 0
+    
+    //loop over array (skips first and last)
+    strArray.removeLast()
+    
+    repeat {
+        c += 1
+        
+        if strArray.indices.contains(c) {
+            if strArray[c].count > maxInt {
+                maxInt = strArray[c].count
+            }
+        }
+    } while c < strArray.count - 1
+    
+    return maxInt
+}

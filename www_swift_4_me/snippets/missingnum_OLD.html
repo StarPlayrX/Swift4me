@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1600815546 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1600815546 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    p.p3-1600815546 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0b0b0c}
+    span.s1-1600815546 {color: #fc5fa3}
+    span.s2-1600815546 {color: #41a1c0}
+    span.s3-1600815546 {color: #d0a8ff}
+    span.s4-1600815546 {color: rgba(255, 255, 255, 0.85)}
+    span.s5-1600815546 {color: #d0bf69}
+  </style>
+</head>
+<body>
+<p class="p1-1600815546"><span class="s1-1600815546"><b>import</b></span> Foundation</p>
+<p class="p2-1600815546"><br></p>
+<p class="p1-1600815546"><span class="s1-1600815546"><b>public</b></span> <span class="s1-1600815546"><b>func</b></span> <span class="s2-1600815546">solution</span>(<span class="s1-1600815546"><b>_</b></span> A : <span class="s1-1600815546"><b>inout</b></span> [<span class="s3-1600815546">Int</span>]) -&gt; <span class="s3-1600815546">Int</span> {</p>
+<p class="p3-1600815546"><span class="s4-1600815546"><span class="Apple-converted-space">    </span></span>// write your code in Swift 4.2.1 (Linux)</p>
+<p class="p2-1600815546"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600815546"><span class="Apple-converted-space">    </span>A = A.sorted()</p>
+<p class="p2-1600815546"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600815546"><span class="Apple-converted-space">    </span><span class="s1-1600815546"><b>var</b></span> iterator = <span class="s5-1600815546">0</span></p>
+<p class="p2-1600815546"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600815546"><span class="Apple-converted-space">    </span><span class="s1-1600815546"><b>for</b></span> i <span class="s1-1600815546"><b>in</b></span> <span class="s5-1600815546">0</span>..&lt;A.count - <span class="s5-1600815546">1</span> {</p>
+<p class="p1-1600815546"><span class="Apple-converted-space">        </span><span class="s1-1600815546"><b>if</b></span> (A[i] + <span class="s5-1600815546">1</span>) != A[i + <span class="s5-1600815546">1</span>] {</p>
+<p class="p1-1600815546"><span class="Apple-converted-space">            </span>iterator = (A[i] + <span class="s5-1600815546">1</span>)</p>
+<p class="p1-1600815546"><span class="Apple-converted-space">            </span><span class="s1-1600815546"><b>break</b></span></p>
+<p class="p1-1600815546"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1-1600815546"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2-1600815546"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600815546"><span class="Apple-converted-space">    </span><span class="s1-1600815546"><b>return</b></span> iterator</p>
+<p class="p1-1600815546">}</p>
+<p class="p2-1600815546"><br></p>
+<p class="p3-1600815546">//locate the missing number (2)</p>
+<p class="p1-1600815546"><span class="s1-1600815546"><b>var</b></span> <span class="s2-1600815546">x</span> = [<span class="s5-1600815546">1</span>,<span class="s5-1600815546">4</span>,<span class="s5-1600815546">5</span>,<span class="s5-1600815546">3</span>,<span class="s5-1600815546">6</span>]</p>
+<p class="p1-1600815546"><span class="s1-1600815546"><b>let</b></span> <span class="s2-1600815546">value</span> = solution(&amp;x)</p>
+<p class="p2-1600815546"><br></p>
+<p class="p1-1600815546">print(value)</p>
+<p class="p2-1600815546"><br></p>
+<p class="p2-1600815546"><br></p>
+<p class="p2-1600815546"><br></p>
+</body>
+</html>

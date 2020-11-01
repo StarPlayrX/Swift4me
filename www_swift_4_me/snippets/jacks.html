@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.5">
+  <style type="text/css">
+    p.p1-1592529040 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c}
+    p.p2-1592529040 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0a0b0c; min-height: 14.0px}
+    p.p3-1592529040 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0a0b0c}
+    p.p4-1592529040 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #67b7a4; background-color: #0a0b0c}
+    p.p5-1592529040 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fc6a5d; background-color: #0a0b0c}
+    span.s1-1592529040 {color: #fc5fa3}
+    span.s2-1592529040 {color: #41a1c0}
+    span.s3-1592529040 {color: #d0a8ff}
+    span.s4-1592529040 {color: #fc6a5d}
+    span.s5-1592529040 {color: rgba(255, 255, 255, 0.85)}
+    span.s6-1592529040 {color: #a167e6}
+    span.s7-1592529040 {color: #67b7a4}
+  </style>
+</head>
+<body>
+<p class="p1-1592529040"><span class="s1-1592529040"><b>import</b></span> Foundation</p>
+<p class="p2-1592529040"><br></p>
+<p class="p3-1592529040">/*</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>Hi Jack, how to override an argument</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p1-1592529040"><span class="s1-1592529040"><b>func</b></span> <span class="s2-1592529040">getStringA</span>(str: <span class="s3-1592529040">String</span> = <span class="s4-1592529040">"Over"</span>) -&gt; <span class="s3-1592529040">String</span> {</p>
+<p class="p2-1592529040"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span>//override an argument by assigning</p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span>//it the same variable name in</p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span>//a let or var statement</p>
+<p class="p1-1592529040"><span class="Apple-converted-space">    </span><span class="s1-1592529040"><b>let</b></span> str = <span class="s4-1592529040">"Hi Jack"</span></p>
+<p class="p1-1592529040"><span class="Apple-converted-space">    </span><span class="s1-1592529040"><b>return</b></span> str</p>
+<p class="p1-1592529040">}</p>
+<p class="p4-1592529040"><span class="s6-1592529040">print</span><span class="s5-1592529040">(</span>getStringA<span class="s5-1592529040">(str: </span><span class="s4-1592529040">"Ride"</span><span class="s5-1592529040">))</span></p>
+<p class="p2-1592529040"><br></p>
+<p class="p2-1592529040"><br></p>
+<p class="p3-1592529040">/*</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>21, how to make an argument mutable</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>*/</p>
+<p class="p1-1592529040"><span class="s1-1592529040"><b>func</b></span> <span class="s2-1592529040">getStringB</span>(str: <span class="s3-1592529040">String</span>) -&gt; <span class="s3-1592529040">String</span> {</p>
+<p class="p2-1592529040"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span>//You can also make the argument</p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span>//mutable like so</p>
+<p class="p3-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span></span><span class="s1-1592529040"><b>var</b></span><span class="s5-1592529040"> str = str </span>//just as an example</p>
+<p class="p5-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span>str = </span>"You scored <span class="s5-1592529040">\(str)</span> points."</p>
+<p class="p2-1592529040"><br></p>
+<p class="p1-1592529040"><span class="Apple-converted-space">    </span><span class="s1-1592529040"><b>return</b></span> str</p>
+<p class="p1-1592529040">}</p>
+<p class="p4-1592529040"><span class="s6-1592529040">print</span><span class="s5-1592529040">(</span>getStringB<span class="s5-1592529040">(str: </span><span class="s4-1592529040">"21"</span><span class="s5-1592529040">))</span></p>
+<p class="p2-1592529040"><br></p>
+<p class="p2-1592529040"><br></p>
+<p class="p3-1592529040">/*</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>Stuff you can't do out of the box</p>
+<p class="p3-1592529040">*/</p>
+<p class="p1-1592529040"><span class="s1-1592529040"><b>func</b></span> <span class="s2-1592529040">getStringC</span>(str: <span class="s3-1592529040">String</span>) -&gt; <span class="s3-1592529040">String</span> {</p>
+<p class="p2-1592529040"><span class="Apple-converted-space">    </span></p>
+<p class="p5-1592529040"><span class="s5-1592529040"><span class="Apple-converted-space">    </span>str = </span>"This is not mutable."</p>
+<p class="p2-1592529040"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1592529040"><span class="Apple-converted-space">    </span><span class="s1-1592529040"><b>return</b></span> str</p>
+<p class="p1-1592529040">}</p>
+<p class="p5-1592529040"><span class="s6-1592529040">print</span><span class="s5-1592529040">(</span><span class="s7-1592529040">getStringC</span><span class="s5-1592529040">(str: </span>"This will error out."<span class="s5-1592529040">))</span></p>
+<p class="p2-1592529040"><br></p>
+<p class="p3-1592529040">/*</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>error: cannot assign to value: 'str' is a 'let' constant</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>str = "This is not mutable."</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>^~~</p>
+<p class="p3-1592529040"><span class="Apple-converted-space"> </span>*/</p>
+</body>
+</html>

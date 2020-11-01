@@ -9,8 +9,12 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1"/>
-        <meta name="description" content="Swift4.me | Swift4me.com (c) 2020"/>
+        <meta name="description" content="Swift4.me | Swift4me.com (c) Todd Bruss
+        2020"/>ss
         <meta name="author" content="Todd Bruss"/>
+        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-title" content="Swift4me"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         
         <!-- Home screen icons for iOS -->
@@ -43,18 +47,13 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
         <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1668x2224.png"/>
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1536x2048.png"/>-->
         
+        <title>Swift4.me</title>
         
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-            
-            <title>Swift4.me</title>
-            
-            <!-- CSS -->
-            <link href="css/MeshUI.css" rel="stylesheet"/>
-            
-            <!-- Fonts -->
-            <link href="css/fonts.css" rel="stylesheet"/>
-            
-            </head>
+        <!-- CSS -->
+        <link href="css/MeshUI.css" rel="stylesheet"/>
+        <!-- Fonts -->
+        <link href="css/fonts.css" rel="stylesheet"/>
+    </head>
     
     <body id="body" >
         
@@ -62,311 +61,57 @@ Presenting Blue Minimal Dark UI by Todd Bruss (c) 2020
             
             <header id="top-nav-bar">
                 <website>Swift4.me</website>
+        
+                <!-- main menu -->
+                <insert-X
+                    data-fold="templates"
+                    data-file="main_menu"
+                    data-type="html">
+                    </insert-X>
                 
-                <div class="minimal-select">
-                    <select class="minimal-default" id="selectmenu"
-                        ontouchend="minimalSelect(this,'minimal-default')"
-                        ontouchstart="minimalSelect(this,'minimal-default-down')"
-                        onchange="select(this)">
-                        <option value="">Main Menu</option>
-                        <option value="welcome">Welcome&nbsp;&nbsp;&nbsp;</option>
-                        <option value="orange">Orange&nbsp;&nbsp;&nbsp;</option>
-                        <option value="fruitloops">Fruit Loops&nbsp;&nbsp;&nbsp;</option>
-                        <option value="willynilly">Willy Nilly&nbsp;&nbsp;&nbsp;</option>
-                        <option value="hellojson">Hello JSON&nbsp;&nbsp;&nbsp;</option>
-                        <option value="assemblyline">Assembly Line&nbsp;&nbsp;&nbsp;</option>
-                        <option value="cssserializer">CSS Serializer&nbsp;&nbsp;&nbsp;</option>
-                    </select>
-                </div>
+                
+                <!--<right class="minimal-select">
+                   <button-X
+                       data-mini='default'
+                       data-clik='buyme'
+                       data-args=''
+                       data-name='Buy My 16" MBP'>
+                   </button-X>-->
+                 </right>
             </header>
             
-            
-            <topper style="display:block;"></topper>
+            <topper></topper>
             <!-- To do make this a template a for in loop within MeshUI -->
             
-    
-            <!-- Fruit Loops -->
-            <div id="welcome">
-                <section>
-                    <left>
-                        <heading>Welcome</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="welcome"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="welcome"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="welcome"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
+            <!--Snippets -->
+            <repeat-X
+                data-type="snippet"
+                data-fold="snippets"
+                data-files="welcome,lockpick,maxcounter,splittape,frogger,missingnum,oddmanout,arrayshift,binarygap,jacks,orange,fruitloops,willynilly,hellojson,assemblyline,cssserializer"
+                data-names="Welcome,LockPick,MaxCounter,SplitTape,Frogger,MissingNum,OddManOut,ArrayShift,BinaryGap,Jack,Orange,FruitLoops,WillyNilly,HelloJSON,AssemblyLine,cssSerializer">
+            </repeat-X>
             
-            <!-- Apples N orange -->
-                <div id="orange">
-                    <section>
-                        <left>
-                            <heading>Orange</heading>
-                        </left>
-                        <clipboard>
-                            <insert-X
-                                data-fold="snippets"
-                                data-file="orange"
-                                data-type="txt">
-                            </insert-X>
-                        </clipboard>
-                        <right>
-                            <button-X
-                                data-mini="default"
-                                data-clik="text2clip"
-                                data-args="orange"
-                                data-name="Clipboard">
-                            </button-X>
-                        </right>
-                    </section>
-                    <article>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="orange"
-                            data-type="html">
-                        </insert-X>
-                    </article>
-                </div>
+            <spacer id="spacer"></spacer>
             
-            <!-- Fruit Loops -->
-            <div id="fruitloops">
-                <section>
-                    <left>
-                        <heading>Fruit Loops</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="fruitloops"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="fruitloops"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="fruitloops"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
-            
-            <!-- Willy Nilly -->
-            <div id="willynilly">
-                <section>
-                    <left>
-                        <heading>Willy Nilly</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="willynilly"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="willynilly"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="willynilly"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
-            
-            <!-- Hello JSON -->
-            <div id="hellojson">
-                <section>
-                    <left>
-                        <heading>Hello JSON</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="hellojson"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="hellojson"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
+            <footer id="bot-nav-bar">
+                <website>By Todd Bruss</website>
                 
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="hellojson"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
-            
-            <!-- Assembly Line -->
-            <div id="assemblyline">
-                <section>
-                    <left>
-                        <heading>Assembly Line</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="assemblyline"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="assemblyline"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="assemblyline"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
-            
-            <!-- CSS Serializer -->
-            <div id="cssserializer">
-                <section>
-                    <left>
-                        <heading>CSS Serializer</heading>
-                    </left>
-                    <clipboard>
-                        <insert-X
-                            data-fold="snippets"
-                            data-file="cssserializer"
-                            data-type="txt">
-                        </insert-X>
-                    </clipboard>
-                    <right>
-                        <button-X
-                            data-mini="default"
-                            data-clik="text2clip"
-                            data-args="cssserializer"
-                            data-name="Clipboard">
-                        </button-X>
-                    </right>
-                </section>
-                <article>
-                    <insert-X
-                        data-fold="snippets"
-                        data-file="cssserializer"
-                        data-type="html">
-                    </insert-X>
-                </article>
-            </div>
-            
-            
-            <!-- Snakes -->
-            <!--<div id="snakes_n_ladders">
-            <section>
-            <left>
-            <heading>Snakes</heading>
-            </left>
-            <clipboard>
-            <insert-X
-            data-fold="snippets"
-            data-file="snakes_n_ladders"
-            data-type="txt">
-            </insert-X>
-            </clipboard>
-            <right>
-            <button-X
-            data-mini="default"
-            data-clik="text2clip"
-            data-args="snakes_n_ladders"
-            data-name="Clipboard">
-            </button-X>
-            </right>
-            </section>
-            <article>
-            <insert-X
-            data-fold="snippets"
-            data-file="snakes_n_ladders"
-            data-type="html">
-            </insert-X>
-            </article>
-            </div>-->
-            
-            <spacer style="display:block;" id="spacer"></spacer>
                 
-                <footer id="bot-nav-bar">
-                    <website>By Todd Bruss</website>
-                    
-                    <div class="minimal-select">
-                        <select class="minimal-default" id="selectmenu"
-                            ontouchend="minimalSelect(this,'minimal-default')"
-                            ontouchstart="minimalSelect(this,'minimal-default-down')"
-                            onchange="select(this)">
-                            <option value="">Main Menu</option>
-                            <option value="welcome">Welcome </option>
-                            <option value="orange">Orange </option>
-                            <option value="fruitloops">Fruit Loops </option>
-                            <option value="willynilly">Willy Nilly </option>
-                            <option value="hellojson">Hello JSON </option>
-                            <option value="assemblyline">Assembly Line </option>
-                            <option value="cssserializer">CSS Serializer </option>
-                        </select>
-                    </div>
-                </footer>
-                
-                </main>
-        
+                <!-- main menu -->
+                <insert-X
+                    data-fold="templates"
+                    data-file="main_menu"
+                    data-type="html">
+                </insert-X>
+            </footer>
+        </main>
     </body>
+
+    <!-- smoothscroll polyfill by http://iamdustan.com/smoothscroll/ -->
+    <!-- ES6 refactoring, long scroll enhancements and iOS bug fixes by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
+    <script src="js/smoothscroll.js"></script>
+    
+    <!-- MeshUI.js created by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
+    <script src="js/MeshUI.js"></script>
+    
 </html>
-
-<!-- MeshUI.js created by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
-<script src="js/MeshUI.js"></script>
-
-<!-- smoothscroll polyfill by http://iamdustan.com/smoothscroll/ -->
-<!-- ES6 refactoring, long scroll enhancements and iOS bug fixes by Todd Bruss (c) 2020 Swift4.me Swift4me.com -->
-<script src="js/smoothscroll.js"></script>
-
-

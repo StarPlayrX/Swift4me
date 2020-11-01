@@ -1,0 +1,51 @@
+import Foundation
+ 
+public func solution(_ N : Int, _ A : inout [Int]) -> [Int] {
+    
+    var interations = Array(repeating: 0, count: N)
+    var maxCounter = 0
+    var maxValue = 0
+    
+    var i = 0
+    var r = 0
+    
+    let uno = 1
+    let NplusUno = N + uno
+ 
+    repeat {
+        
+        let ai = A[i]
+                 
+        if ai != NplusUno {
+            let iterator = ai - uno
+            if interations.indices.contains(iterator) {
+                interations[iterator] = max(maxCounter, interations[iterator]) + uno
+                maxValue = max(maxValue, interations[iterator])
+            }
+        } else {
+           maxCounter = maxValue
+        }
+    
+        i += uno
+        
+    } while i < A.count
+    
+    
+    repeat {
+        
+        if interations.indices.contains(r) {
+            interations[r] = max(maxCounter, interations[r])
+        }
+        
+        r += 1
+        
+    } while r < interations.count
+    
+    return interations
+}
+ 
+ 
+var a = [3, 4, 4, 6, 1, 4, 4]
+let n = 5
+ 
+print ( solution(n,&a)) //[3, 2, 2, 4, 2]

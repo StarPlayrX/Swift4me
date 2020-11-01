@@ -1,7 +1,7 @@
 <textarea id="welcome-txt" class="clipboard-text" tabindex="-1"> 
 let Welcome = "Welcome to Swift4.me :)"
  
-let CodeSnippets = "For Everyone!"
+let CodeSnippets = "For Swift Programmers"
  
 /*
  For the absolute best mobile

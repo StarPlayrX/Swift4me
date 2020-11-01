@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1600871609 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1600871609 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    p.p3-1600871609 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0b0b0c}
+    span.s1-1600871609 {color: #fc5fa3}
+    span.s2-1600871609 {color: #41a1c0}
+    span.s3-1600871609 {color: #d0a8ff}
+    span.s4-1600871609 {color: rgba(255, 255, 255, 0.85)}
+    span.s5-1600871609 {color: #a167e6}
+    span.s6-1600871609 {color: #d0bf69}
+    span.s7-1600871609 {color: #6c7986}
+    span.s8-1600871609 {color: #67b7a4}
+  </style>
+</head>
+<body>
+<p class="p1-1600871609"><span class="s1-1600871609"><b>import</b></span> Foundation</p>
+<p class="p2-1600871609"><br></p>
+<p class="p1-1600871609"><span class="s1-1600871609"><b>public</b></span> <span class="s1-1600871609"><b>func</b></span> <span class="s2-1600871609">solution</span>(<span class="s1-1600871609"><b>_</b></span> A : <span class="s1-1600871609"><b>inout</b></span> [<span class="s3-1600871609">Int</span>]) -&gt; <span class="s3-1600871609">Int</span> {</p>
+<p class="p3-1600871609"><span class="s4-1600871609"><span class="Apple-converted-space">    </span></span>// write your code in Swift 4.2.1 (Linux)</p>
+<p class="p2-1600871609"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600871609"><span class="Apple-converted-space">     </span><span class="s1-1600871609"><b>let</b></span> a = A.<span class="s5-1600871609">count</span> <span class="s5-1600871609">+</span> <span class="s6-1600871609">1</span></p>
+<p class="p1-1600871609"><span class="Apple-converted-space">     </span><span class="s1-1600871609"><b>let</b></span> b = a <span class="s5-1600871609">*</span> (a <span class="s5-1600871609">+</span> <span class="s6-1600871609">1</span>) <span class="s5-1600871609">/</span> <span class="s6-1600871609">2</span></p>
+<p class="p1-1600871609"><span class="Apple-converted-space">     </span><span class="s1-1600871609"><b>let</b></span> c = A.<span class="s5-1600871609">reduce</span>(<span class="s6-1600871609">0</span>,<span class="s5-1600871609">+</span>)</p>
+<p class="p1-1600871609"><span class="Apple-converted-space">     </span><span class="s1-1600871609"><b>return</b></span> <span class="s5-1600871609">abs</span>(b <span class="s5-1600871609">-</span> c)</p>
+<p class="p1-1600871609">}</p>
+<p class="p2-1600871609"><br></p>
+<p class="p1-1600871609"><span class="s1-1600871609"><b>var</b></span> <span class="s2-1600871609">x</span> = [<span class="s6-1600871609">1</span>,<span class="s6-1600871609">2</span>,<span class="s6-1600871609">4</span>,<span class="s6-1600871609">5</span>,<span class="s6-1600871609">6</span>,<span class="s6-1600871609">7</span>,<span class="s6-1600871609">8</span>,<span class="s6-1600871609">9</span>,<span class="s6-1600871609">10</span>,<span class="s6-1600871609">11</span>,<span class="s6-1600871609">12</span>,<span class="s6-1600871609">13</span>] <span class="s7-1600871609">//3</span></p>
+<p class="p2-1600871609"><br></p>
+<p class="p1-1600871609"><span class="s5-1600871609">print</span> ( <span class="s8-1600871609">solution</span>(&amp;<span class="s8-1600871609">x</span>) )</p>
+<p class="p2-1600871609"><br></p>
+</body>
+</html>

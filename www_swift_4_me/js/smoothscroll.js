@@ -1,6 +1,6 @@
 /* https://github.com/iamdustan/smoothscroll */
-/* Smooth scroll Polyfill by Dustan Kasten */
-/* Forked ES6 refactoring by Todd Bruss, changes to be posted by June 21st 2020 */
+/* Smooth scroll Polyfill by Dustan Kasten   */
+/* Forked to ES6 and Refactored by Todd Bruss 11.1.2020 */
 
 /* Changes, set x values to 0 as we won't be scrolling anything horizontally */
 const smoothscroll = _ => {
@@ -70,12 +70,12 @@ const smoothscroll = _ => {
         let currentY
         
         let distance = context.y - context.startY;
-        let multiplier = 1;
+        let multiplier = 1.5;
         
         if (distance < 0 ) { distance *= -1 }
         
         if (distance >= 0 && distance <= 500) {
-            multiplier = 1
+            multiplier = 1.75
         } else if (distance >= 500.001 && distance <= 1000) {
             multiplier = 2
         } else if  (distance >= 1000.001 && distance <= 2000) {
@@ -209,4 +209,3 @@ const smoothscroll = _ => {
 }
 
 smoothscroll()
-

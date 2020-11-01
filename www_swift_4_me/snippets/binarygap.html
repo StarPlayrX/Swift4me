@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1600827343 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1600827343 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    p.p3-1600827343 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0b0b0c}
+    span.s1-1600827343 {color: #fc5fa3}
+    span.s2-1600827343 {color: #41a1c0}
+    span.s3-1600827343 {color: #d0a8ff}
+    span.s4-1600827343 {color: rgba(255, 255, 255, 0.85)}
+    span.s5-1600827343 {color: #d0bf69}
+    span.s6-1600827343 {color: #fc6a5d}
+  </style>
+</head>
+<body>
+<p class="p1-1600827343"><span class="s1-1600827343"><b>import</b></span> Foundation</p>
+<p class="p2-1600827343"><br></p>
+<p class="p1-1600827343"><span class="s1-1600827343"><b>public</b></span> <span class="s1-1600827343"><b>func</b></span> <span class="s2-1600827343">solution</span>(<span class="s1-1600827343"><b>_</b></span> N : <span class="s3-1600827343">Int</span>) -&gt; <span class="s3-1600827343">Int</span> {</p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1600827343"><span class="s4-1600827343"><span class="Apple-converted-space">    </span></span>//convert String to Binary Represention</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>let</b></span> str = String(N, radix: <span class="s5-1600827343">2</span>)</p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1600827343"><span class="s4-1600827343"><span class="Apple-converted-space">    </span></span>//split binary string</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>var</b></span> strArray = str.components(separatedBy: <span class="s6-1600827343">"1"</span>)</p>
+<p class="p3-1600827343"><span class="s4-1600827343"><span class="Apple-converted-space">    </span></span>//counter</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>var</b></span> c = <span class="s5-1600827343">0</span></p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1600827343"><span class="s4-1600827343"><span class="Apple-converted-space">    </span></span>//init our max Integer</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>var</b></span> maxInt = <span class="s5-1600827343">0</span></p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1600827343"><span class="s4-1600827343"><span class="Apple-converted-space">    </span></span>//loop over array (skips first and last)</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span>strArray.removeLast()</p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>repeat</b></span> {</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">        </span>c += <span class="s5-1600827343">1</span></p>
+<p class="p2-1600827343"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1600827343"><span class="Apple-converted-space">        </span><span class="s1-1600827343"><b>if</b></span> strArray.indices.contains(c) {</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">            </span><span class="s1-1600827343"><b>if</b></span> strArray[c].count &gt; maxInt {</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">                </span>maxInt = strArray[c].count</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span>} <span class="s1-1600827343"><b>while</b></span> c &lt; strArray.count - <span class="s5-1600827343">1</span></p>
+<p class="p2-1600827343"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600827343"><span class="Apple-converted-space">    </span><span class="s1-1600827343"><b>return</b></span> maxInt</p>
+<p class="p1-1600827343">}</p>
+</body>
+</html>

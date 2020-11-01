@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Author" content="Todd Bruss">
+  <meta name="Company" content="Swift4.me">
+  <meta name="Copyright" content="2020 Swift4.me | StarPlatyrX.com">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1601341170 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1601341170 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    span.s1-1601341170 {color: #fc5fa3}
+    span.s2-1601341170 {color: #41a1c0}
+    span.s3-1601341170 {color: #d0a8ff}
+    span.s4-1601341170 {color: #d0bf69}
+    span.s5-1601341170 {color: #6c7986}
+  </style>
+</head>
+<body>
+<p class="p1-1601341170"><span class="s1-1601341170"><b>import</b></span> Foundation</p>
+<p class="p2-1601341170"><br></p>
+<p class="p1-1601341170"><span class="s1-1601341170"><b>public</b></span> <span class="s1-1601341170"><b>func</b></span> <span class="s2-1601341170">solution</span>(<span class="s1-1601341170"><b>_</b></span> N : <span class="s3-1601341170">Int</span>, <span class="s1-1601341170"><b>_</b></span> A : <span class="s1-1601341170"><b>inout</b></span> [<span class="s3-1601341170">Int</span>]) -&gt; [<span class="s3-1601341170">Int</span>] {</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>var</b></span> interations = Array(repeating: <span class="s4-1601341170">0</span>, count: N)</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>var</b></span> maxCounter = <span class="s4-1601341170">0</span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>var</b></span> maxValue = <span class="s4-1601341170">0</span></p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>var</b></span> i = <span class="s4-1601341170">0</span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>var</b></span> r = <span class="s4-1601341170">0</span></p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>let</b></span> uno = <span class="s4-1601341170">1</span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>let</b></span> NplusUno = N + uno</p>
+<p class="p2-1601341170"><br></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>repeat</b></span> {</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span><span class="s1-1601341170"><b>let</b></span> ai = A[i]</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">                 </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span><span class="s1-1601341170"><b>if</b></span> ai != NplusUno {</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">            </span><span class="s1-1601341170"><b>let</b></span> iterator = ai - uno</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">            </span><span class="s1-1601341170"><b>if</b></span> interations.indices.contains(iterator) {</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">                </span>interations[iterator] = max(maxCounter, interations[iterator]) + uno</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">                </span>maxValue = max(maxValue, interations[iterator])</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span>} <span class="s1-1601341170"><b>else</b></span> {</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">           </span>maxCounter = maxValue</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span>i += uno</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span>} <span class="s1-1601341170"><b>while</b></span> i &lt; A.count</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>repeat</b></span> {</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span><span class="s1-1601341170"><b>if</b></span> interations.indices.contains(r) {</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">            </span>interations[r] = max(maxCounter, interations[r])</p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">        </span>r += <span class="s4-1601341170">1</span></p>
+<p class="p2-1601341170"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span>} <span class="s1-1601341170"><b>while</b></span> r &lt; interations.count</p>
+<p class="p2-1601341170"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1601341170"><span class="Apple-converted-space">    </span><span class="s1-1601341170"><b>return</b></span> interations</p>
+<p class="p1-1601341170">}</p>
+<p class="p2-1601341170"><br></p>
+<p class="p2-1601341170"><br></p>
+<p class="p1-1601341170"><span class="s1-1601341170"><b>var</b></span> <span class="s2-1601341170">a</span> = [<span class="s4-1601341170">3</span>, <span class="s4-1601341170">4</span>, <span class="s4-1601341170">4</span>, <span class="s4-1601341170">6</span>, <span class="s4-1601341170">1</span>, <span class="s4-1601341170">4</span>, <span class="s4-1601341170">4</span>]</p>
+<p class="p1-1601341170"><span class="s1-1601341170"><b>let</b></span> <span class="s2-1601341170">n</span> = <span class="s4-1601341170">5</span></p>
+<p class="p2-1601341170"><br></p>
+<p class="p1-1601341170">print ( solution(n,&amp;a)) <span class="s5-1601341170">//[3, 2, 2, 4, 2]</span></p>
+</body>
+</html>

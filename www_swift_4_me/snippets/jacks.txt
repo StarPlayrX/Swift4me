@@ -1,0 +1,49 @@
+<textarea id="jacks-txt" class="clipboard-text"  tabindex="-1">
+import Foundation
+ 
+/*
+ Hi Jack, how to override an argument
+ */
+func getStringA(str: String = "Over") -> String {
+    
+    //override an argument by assigning
+    //it the same variable name in
+    //a let or var statement
+    let str = "Hi Jack"
+    return str
+}
+print(getStringA(str: "Ride"))
+ 
+ 
+/*
+ 21, how to make an argument mutable
+ */
+func getStringB(str: String) -> String {
+    
+    //You can also make the argument
+    //mutable like so
+    var str = str //just as an example
+    str = "You scored \(str) points."
+ 
+    return str
+}
+print(getStringB(str: "21"))
+ 
+ 
+/*
+ Stuff you can't do out of the box
+*/
+func getStringC(str: String) -> String {
+    
+    str = "This is not mutable."
+    
+    return str
+}
+print(getStringC(str: "This will error out."))
+ 
+/*
+ error: cannot assign to value: 'str' is a 'let' constant
+ str = "This is not mutable."
+ ^~~
+ */
+</textarea>

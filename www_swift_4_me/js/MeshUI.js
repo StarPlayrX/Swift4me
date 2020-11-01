@@ -47,7 +47,7 @@ const _I = {
 //MARK: _B => _Buttons
 const _B = {
     mini            : 'minimal',
-default         : 'default',
+default             : 'default',
     dash            : '-',
     up              : 'up',
     down            : 'down',
@@ -58,6 +58,7 @@ default         : 'default',
 const insertBtns = _ => {
     _A.empty.forEach.call(_O.d.getElementsByTagName(_), x => {
         
+        
         let mi = x.dataset.mini
         let cl = x.dataset.clik
         let ar = x.dataset.args
@@ -67,7 +68,6 @@ const insertBtns = _ => {
         let up = `${_B.this + _B.comma}'${_B.mini}${_B.dash}${mi}`
         let dn = `${_B.this + _B.comma}'${_B.mini}${_B.dash}${mi}${_B.dash}${_B.down}`
         
-        //MARK: To Do - loop over the guts for this button? Come up with a pattern for future.
         let bn = `<button onclick=${ck}onmouseup=minimalButton(${up}') onmousedown=minimalButton(${dn}') onmouseleave=minimalButton(${up}') ontouchstart=minimalButton(${dn}') ontouchend=minimalButton(${up}') class='${_B.mini}${_B.dash}${mi}'>${na}</button>`
         
         x.insertAdjacentHTML(_S.end, bn)
@@ -75,14 +75,74 @@ const insertBtns = _ => {
     } )
 }
 
+
+const log = _ => {
+    console.log(_)
+}
+
+const insertRepeat = _ => {
+    
+    _A.empty.forEach.call(_O.d.getElementsByTagName(_), x => {
+       
+       let type = x.dataset.type //To Be used in the future
+       let fold = x.dataset.fold //This may become an array for flexibility, maybe have a check for it
+       var files = x.dataset.files
+       var names = x.dataset.names
+       names = names.split(',').reverse();
+       files = files.split(',').reverse();
+       
+        for (var i in files ) {
+            let snippet = `
+                <!-- Snippet -->
+                   <div id='${files[i]}'>
+                       <section>
+                           <left>
+                               <heading>${names[i]}</heading>
+                           </left>
+                           <clipboard>
+                               <insert-X
+                                   data-fold='${fold}'
+                                   data-file='${files[i]}'
+                                   data-type='txt'>
+                               </insert-X>
+                           </clipboard>
+                           <right>
+                               <button-X
+                                   data-mini='default'
+                                   data-clik='text2clip'
+                                   data-args='${files[i]}'
+                                   data-name='Clipboard'>
+                               </button-X>
+                           </right>
+                       </section>
+                       <article>
+                           <insert-X
+                               data-fold='${fold}'
+                               data-file='${files[i]}'
+                               data-type='html'>
+                           </insert-X>
+                       </article>
+                   </div>`
+                 x.insertAdjacentHTML(_S.end, snippet)
+        }
+   } )
+
+    insertFile('insert-X')
+    insertBtns(_S.B)
+
+}
+
+const buyme = _ => {
+    window.open("https://www.ebay.com/itm/153975182809", "_blank")
+}
 const insertFile = _ => {
-    _A.empty.forEach.call(_O.d.getElementsByTagName(_), x =>
-                          fetch(_S.cd    + x.dataset.fold +
-                                _S.slash + x.dataset.file +
-                                _S.dot   + x.dataset.type )
-                          .then(_ => _.text())
-                          .then(_ => x.insertAdjacentHTML(_S.end, _))
-                          )
+    _A.empty.forEach.call
+    ( _O.d.getElementsByTagName(_), x =>
+     fetch(_S.cd    + x.dataset.fold +
+           _S.slash + x.dataset.file +
+           _S.dot   + x.dataset.type )
+     .then(_ => _.text())
+     .then(_ => x.insertAdjacentHTML(_S.end, _)) )
 }
 
 //MARK: Reset Main Menu
@@ -96,6 +156,7 @@ const startup = _ => {
     let item = _O.d.getElementById(_)
     let menu = item[1]
     scrollView(menu)
+    
 }
 
 //MARK: copy text to clipboard
@@ -109,9 +170,9 @@ const text2clip = utf8 => {
 
 //MARK: JavaScript only scrolling
 const scrollView = ({value}) => {
-
+    
     superSpacer()
-
+    
     let tb = _O.d.getElementById(_S.topbar).clientHeight
     let m = _O.d.getElementById(value)
     let pos = m.style.position
@@ -136,7 +197,7 @@ const minimalButton = (obj, def) => {
 }
 
 const minimalSelect = (obj, def) => {
-
+    
     obj.className = def
 }
 
@@ -145,40 +206,50 @@ const superSpacer = _ => {
         let tb = _O.d.getElementById(_S.bottombar).clientHeight
         _O.d.getElementById(_S.spacer).style.height = String(tb + _I.space + _S.px)
     } catch (error) {
-       log(error)
+        log(error)
     }
 }
 
 //MARK: Startup insertX.js
 const init = _ =>
-insertFile(_S.X)
-insertBtns(_S.B)
-reset(_S.menu)
-startup(_S.menu)
+insertRepeat('repeat-X')
+
+//reset(_S.menu)
+//startup(_S.menu)
 
 superSpacer()
 
 init()
 
 
-const log = _ => {
-    console.log(_)
-}
-
 const xxx = body.clientHeight;
 
 
 const isScreenDirty = false;
 
-const setScreen = (padding,height) => {
+const setScreen = (padding,height, width) => {
     _O.d.getElementById(_S.bottombar).style.padding = padding
     body.style.height = height
+    body.style.width = width
+
 }
 
 
 _O.w.addEventListener('touchend', _ => {
-    _O.w.scrollTo(0,0)
+    if (globalScene) {
+        _O.w.scrollTo(0,_O.w.scrollY)
+       // alert(`outerWidth ${_O.w.outerWidth}\nouterHeight ${_O.w.outerHeight}\ninnerWidth ${_O.w.innerWidth}\ninnerHeight ${_O.w.innerHeight}`)
+    }
+
 });
+
+
+_O.w.addEventListener('scroll', e => {
+       e.preventDefault()
+});
+
+
+var globalScene = true
 
 _O.w.addEventListener('resize', _ => {
     let w = _O.w //window
@@ -188,7 +259,7 @@ _O.w.addEventListener('resize', _ => {
     let min = Math.min
     
     if (w.orientation === undefined ) { return } //return if we don't have a screen
-        log("")
+    log("")
     let orientation = w.orientation
     let fs = w.matchMedia('(device-height: 100vh)');
     
@@ -208,10 +279,12 @@ _O.w.addEventListener('resize', _ => {
     log(`windowX: ${windowX}  windowY: ${windowY}`)
     log(`orientation: ${orientation}`)
     
+    
     //resize constants
     let padZ  = "0"
     let padB = "0 0 20px 0"
-    let vh = "100vh"
+    let vh = "99.9vh"
+    let vw = "100vw"
     let per = "100%"
     let portrait = 0
     let landscape = -90
@@ -229,7 +302,7 @@ _O.w.addEventListener('resize', _ => {
     //iPhone constants
     let _114px = 114
     let _40px  = 40
-
+    
     //896 - 719 = 177
     //896 - 800 = 96
     
@@ -242,36 +315,61 @@ _O.w.addEventListener('resize', _ => {
     //MARK: iPhone X, iPhone Xs, iPhone Xs Max, iPhone XÊ
     if ( orientation === portrait && !fullscreen && isX && windowX == displayX ) {
         if ( screenX == displayY && screenY == displayX && windowY == displayY - _177px ) {
-            setScreen( padB, vh )
+            setScreen( padB, vh, vw )
+            globalScene = false
         } else if ( screenX == displayX && screenY == displayY && windowY == displayY - _177px ) {
-            setScreen( padZ, per )
+            setScreen( padZ, per, per )
         } else if ( screenX == displayX && screenY == displayY && windowY >= displayY - _96px ) {
-            setScreen( padB, per )
+            setScreen( padB, per, per )
         }
     }
     
     //MARK: iPhone 8plus, iPhone 8
     if ( orientation === portrait && !fullscreen && !isX && windowX == displayX  ) {
         if ( screenX == displayY && screenY == displayX && windowY == displayY - _114px  ) {
-            setScreen( padZ, vh )
-        } else if ( screenX == displayX && screenY == displayY && windowY == displayY - _114px ) {
-            setScreen( padZ, per )
+            setScreen( padZ, vh, vw )
+        } else if ( screenX == displayX && screenY == displayY && windowY == displayY - _114px ) {e
+            setScreen( padZ, per, per )
         } else if ( screenX == displayX && screenY == displayY && windowY >= displayY - _40px ) {
-            setScreen( padZ, per )
+            setScreen( padZ, per, per )
         }
     }
     
-    
-    if ( fullscreen && isX) {
-        setScreen( padB, vh )
-    } else if ( fullscreen && !isX) {
-        setScreen( padZ, vh )
+   e
+    if ( fullscreen && isX && orientation === portrait) {
+        setScreen( padB, vh, vw )
+        globalScene = false
+    } else if ( fullscreen && !isX && orientation === portrait) {
+        setScreen( padZ, vh, vw )
+        globalScene = false
+
     } else if (orientation === landscape && isX ) {
-        setScreen( padB, per )
+        setScreen( padB, per, per )
     } else if (orientation === landscape && !isX ) {
-        setScreen( padZ, per )
+        setScreen( padZ, per, per )
     }
     
+    if (!fullscreen && displayX == screenY && displayY == screenX) {
+        setScreen( padB, vh, vw )
+        globalScene = true
+    }
+
     setTimeout( _ => superSpacer(), second )
 })
 
+
+//MARK: JavaScript only scrolling
+const scrollView2 = id => {
+    
+    superSpacer()
+    
+    let tb = _O.d.getElementById(_S.topbar).clientHeight
+    let m = _O.d.getElementById(id)
+    let pos = m.style.position
+    let top = m.style.top
+    m.style.position = _S.relative
+    m.style.top = `-${tb + _I.space - 1 + _S.px}`
+    m.scrollIntoView({behavior: _S.smooth, block: _S.start})
+    m.style.top = top
+    m.style.position = pos
+}

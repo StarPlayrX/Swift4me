@@ -1,0 +1,41 @@
+import Foundation
+ 
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    
+    
+    var dict = [Int: Int]()
+      
+    //iterator
+    var i = -1
+    
+    repeat {
+        i += 1
+        
+        if A.indices.contains(i) {
+            if let _ = dict[ A[i] ] {
+               dict[ A[i] ]! += 1
+            } else {
+               dict[ A[i] ] = 1
+            }
+        }
+        
+        
+    } while i < A.count - 1
+    
+    
+    //return the first odd (non-pair)
+    
+     if let x = dict.first( where: { (_, odd) -> Bool in odd % 2 != 0 } ) {
+        return x.key
+    } else {
+        return 0
+    }
+    
+}
+ 
+var x = [2,2,4,4,1,1,1]
+ 
+var y = solution(&x)
+ 
+print(y)

@@ -223,9 +223,8 @@ html {
     background:rgb(64,128,255);
     -webkit-locale: "en";
     background:var(--html-bg-color);
-    height:100%;
-    width:100%;
 }
+
 
 
 
@@ -233,15 +232,15 @@ html {
 html, body {
     padding:0;
     margin:0;
-    height:100%;
     width:100%;
-    overflow-y:hidden;
+    height:100%;
+    overflow:hidden;
 }
+
 
 main {
     height:100%;
-    width:100%;
-    overflow:scroll;
+    overflow-y:scroll;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: auto;
 }
@@ -260,13 +259,13 @@ main {
     /* MARK: fullscreen */
     @media screen and (device-width: 100vw) and (device-height: 100vh) {
 
-        html,main,body { height:100vh}
         /* MARK: iPhoneXs Max, iPhoneX style */
         @media (device-height: 896px), (device-height: 812px) {
             header { padding-top:35px }
             topper { height:35px }
-            footer { padding-bottom: 100px }
+            footer { padding-bottom: 20px }
             footer { position:fixed;left:0;bottom:0;}
+            
         }
         
         /* MARK: iPhone 8plus, 8 style */
@@ -292,7 +291,9 @@ main {
             footer { padding-bottom: 20px }
         }
         
-        topper, header { height:0; display: none}
+        header { height:0; display: none}
+        topper { height:0; display: none}
+
     }
     
     /* MARK: iPhone 8plus, 8 style, all screens */

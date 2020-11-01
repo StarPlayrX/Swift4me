@@ -1,4 +1,4 @@
-<textarea id="oranges-txt" class="clipboard-text"  tabindex="-1">
+<textarea id="orange-txt" class="clipboard-text"  tabindex="-1">
 import Foundation
  
 /*
@@ -11,7 +11,7 @@ var fruit : String = "🍏"  {
         print("Now I'm a \(fruit)")
     }
     willSet {
-        print("I was a \(fruit)")
+        print("I was an \(fruit)")
     }
 }
  
@@ -19,6 +19,8 @@ fruit = "🍊"
 
 /*:  ### Output
  ## I was a 🍏
- ## Now I'm a 🍊
+ ## Now I'm an 🍊
  */
 </textarea>
+
+

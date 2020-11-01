@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p1-1600834049 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c}
+    p.p2-1600834049 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #0b0b0c; min-height: 14.0px}
+    p.p3-1600834049 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6c7986; background-color: #0b0b0c}
+    p.p4-1600834049 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #67b7a4; background-color: #0b0b0c}
+    p.p5-1600834049 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #a167e6; background-color: #0b0b0c}
+    span.s1-1600834049 {color: #fc5fa3}
+    span.s2-1600834049 {color: #41a1c0}
+    span.s3-1600834049 {color: #d0a8ff}
+    span.s4-1600834049 {color: rgba(255, 255, 255, 0.85)}
+    span.s5-1600834049 {color: #d0bf69}
+    span.s6-1600834049 {color: #a167e6}
+    span.s7-1600834049 {color: #67b7a4}
+  </style>
+</head>
+<body>
+<p class="p1-1600834049"><span class="s1-1600834049"><b>import</b></span> Foundation</p>
+<p class="p2-1600834049"><br></p>
+<p class="p1-1600834049"><span class="s1-1600834049"><b>public</b></span> <span class="s1-1600834049"><b>func</b></span> <span class="s2-1600834049">solution</span>(<span class="s1-1600834049"><b>_</b></span> A : <span class="s1-1600834049"><b>inout</b></span> [<span class="s3-1600834049">Int</span>]) -&gt; <span class="s3-1600834049">Int</span> {</p>
+<p class="p3-1600834049"><span class="s4-1600834049"><span class="Apple-converted-space">    </span></span>// write your code in Swift 4.2.1 (Linux)</p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span><span class="s1-1600834049"><b>var</b></span> dict = [<span class="s3-1600834049">Int</span>: <span class="s3-1600834049">Int</span>]()</p>
+<p class="p2-1600834049"><span class="Apple-converted-space">      </span></p>
+<p class="p3-1600834049"><span class="s4-1600834049"><span class="Apple-converted-space">    </span></span>//iterator</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span><span class="s1-1600834049"><b>var</b></span> i = <span class="s5-1600834049">-1</span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span><span class="s1-1600834049"><b>repeat</b></span> {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">        </span>i <span class="s6-1600834049">+=</span> <span class="s5-1600834049">1</span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">        </span><span class="s1-1600834049"><b>if</b></span> A.<span class="s6-1600834049">indices</span>.<span class="s6-1600834049">contains</span>(i) {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">            </span><span class="s1-1600834049"><b>if</b></span> <span class="s1-1600834049"><b>let</b></span> <span class="s1-1600834049"><b>_</b></span> = dict[ A[i] ] {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">               </span>dict[ A[i] ]! <span class="s6-1600834049">+=</span> <span class="s5-1600834049">1</span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">            </span>} <span class="s1-1600834049"><b>else</b></span> {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">               </span>dict[ A[i] ] = <span class="s5-1600834049">1</span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2-1600834049"><span class="Apple-converted-space">        </span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">        </span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span>} <span class="s1-1600834049"><b>while</b></span> i <span class="s6-1600834049">&lt;</span> A.<span class="s6-1600834049">count</span> <span class="s6-1600834049">-</span> <span class="s5-1600834049">1</span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p3-1600834049"><span class="s4-1600834049"><span class="Apple-converted-space">    </span></span>//return the first odd (non-pair)</p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">     </span><span class="s1-1600834049"><b>if</b></span> <span class="s1-1600834049"><b>let</b></span> x = dict.<span class="s6-1600834049">first</span>( where: { (<span class="s1-1600834049"><b>_</b></span>, odd) -&gt; <span class="s3-1600834049">Bool</span> <span class="s1-1600834049"><b>in</b></span> odd <span class="s6-1600834049">%</span> <span class="s5-1600834049">2</span> <span class="s6-1600834049">!=</span> <span class="s5-1600834049">0</span> } ) {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">        </span><span class="s1-1600834049"><b>return</b></span> x.key</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span>} <span class="s1-1600834049"><b>else</b></span> {</p>
+<p class="p1-1600834049"><span class="Apple-converted-space">        </span><span class="s1-1600834049"><b>return</b></span> <span class="s5-1600834049">0</span></p>
+<p class="p1-1600834049"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2-1600834049"><span class="Apple-converted-space">    </span></p>
+<p class="p1-1600834049">}</p>
+<p class="p2-1600834049"><br></p>
+<p class="p1-1600834049"><span class="s1-1600834049"><b>var</b></span> <span class="s2-1600834049">x</span> = [<span class="s5-1600834049">2</span>,<span class="s5-1600834049">2</span>,<span class="s5-1600834049">4</span>,<span class="s5-1600834049">4</span>,<span class="s5-1600834049">1</span>,<span class="s5-1600834049">1</span>,<span class="s5-1600834049">1</span>]</p>
+<p class="p2-1600834049"><br></p>
+<p class="p4-1600834049"><span class="s1-1600834049"><b>var</b></span><span class="s4-1600834049"> </span><span class="s2-1600834049">y</span><span class="s4-1600834049"> = </span>solution<span class="s4-1600834049">(&amp;</span>x<span class="s4-1600834049">)</span></p>
+<p class="p2-1600834049"><br></p>
+<p class="p5-1600834049">print<span class="s4-1600834049">(</span><span class="s7-1600834049">y</span><span class="s4-1600834049">)</span></p>
+</body>
+</html>

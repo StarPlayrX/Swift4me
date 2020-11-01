@@ -1,0 +1,27 @@
+import Foundation
+ 
+public func solution(_ A : inout [Int], _ K : Int) -> [Int] {
+    // write your code in Swift 4.2.1 (Linux)
+    
+    if K <= 0 || A.count == 0 {
+        return A
+    } else {
+    
+        var newArray = A
+ 
+        for _ in 0..<K {
+            newArray.insert( newArray.removeLast(), at: 0)
+        }
+        
+        return newArray
+    
+    }
+ 
+}
+ 
+var a = [3, 8, 9, 7, 6]
+var k = 3
+ 
+let x = solution(&a,k)
+ 
+print(x)

@@ -1,0 +1,27 @@
+import Foundation
+ 
+public func solution(_ A : inout [Int]) -> Int {
+    
+    //min value
+    var X = 0
+    
+    //sum
+    var Y = A.reduce(0, +)
+    
+    //max value
+    var Z = 100000
+    
+    A.removeLast(1)
+    
+    for i in A {
+        X += i //X = X + i
+        Y -= i //Y = Y - i
+        Z = min(Z, abs(X - Y) )
+    }
+    
+    return Z
+}
+ 
+var x = [-1000,1000]
+ 
+solution(&x)

@@ -1,0 +1,27 @@
+import Foundation
+ 
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    
+    A = A.sorted()
+    
+    var iterator = 0
+    
+    for i in 0..<A.count - 1 {
+        if (A[i] + 1) != A[i + 1] {
+            iterator = (A[i] + 1)
+            break
+        }
+    }
+    
+    return iterator
+}
+ 
+//locate the missing number (2)
+var x = [1,4,5,3,6]
+let value = solution(&x)
+ 
+print(value)
+ 
+ 
+ 

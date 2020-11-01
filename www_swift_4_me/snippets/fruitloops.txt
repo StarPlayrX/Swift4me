@@ -10,7 +10,7 @@ let spacer = ""
  
 for fruit in funArray {
     
-    //MARK: let in implied
+    //MARK: let is implied
     //MARK: cannot mutate fruit here
     
     print(fruit)

@@ -1,0 +1,15 @@
+import Foundation
+ 
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    
+     let a = A.count + 1
+     let b = a * (a + 1) / 2
+     let c = A.reduce(0,+)
+     return abs(b - c)
+}
+ 
+var x = [1,2,4,5,6,7,8,9,10,11,12,13] //3
+ 
+print ( solution(&x) )
+ 
